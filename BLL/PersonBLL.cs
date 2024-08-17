@@ -135,12 +135,38 @@ namespace CW
             }
         }
 
+        public int EditPerson(int personId, string name, string telephone, string email, string role)
+        {
+            try
+            {
+                PersonDAL objdal = new PersonDAL();
+                return objdal.UpdatePerson(personId, name, telephone, email, role);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public void AddTeacher(int personId, decimal salary, string subject1, string subject2)
         {
             try
             {
                 PersonDAL objdal = new PersonDAL();
                 objdal.CreateTeacher(personId, salary, subject1, subject2);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public void EditTeacher(int personId, decimal salary, string subject1, string subject2)
+        {
+            try
+            {
+                PersonDAL objdal = new PersonDAL();
+                objdal.UpdateTeacher(personId, salary, subject1, subject2);
             }
             catch
             {

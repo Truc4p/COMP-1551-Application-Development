@@ -17,7 +17,6 @@ namespace CW
         {
             InitializeComponent();
             this.PersonDGV.SelectionChanged += new System.EventHandler(this.PersonDGV_SelectionChanged);
-            this.viewGroupDGV.SelectionChanged += new System.EventHandler(this.viewGroupDGV_SelectionChanged);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,10 +25,6 @@ namespace CW
             {
                 PersonBLL p = new PersonBLL();
                 this.PersonDGV.DataSource = p.GetPersons();
-                this.viewGroupDGV.DataSource = p.GetTeachers();
-                this.viewAfterAddDGV.DataSource = p.GetTeachers(); 
-                this.addAdminDgv.DataSource = p.GetAdmins();
-                this.addStudentDgv.DataSource = p.GetStudents();
 
             }
             catch
@@ -53,20 +48,7 @@ namespace CW
             }
         }
 
-        private void viewGroupDGV_SelectionChanged(object sender, EventArgs e)
-        {
-            if (viewGroupDGV.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = viewGroupDGV.SelectedRows[0];
-
-                // Access the data in the selected row
-                var personId = selectedRow.Cells["PersonId"].Value;
-                var personRole = selectedRow.Cells["Role"].Value;
-
-                PersonBLL p = new PersonBLL();
-                this.viewGroupDGV.DataSource = p.GetPersonInfo(personId, personRole);
-            }
-        }
+        
 
 
         
@@ -134,26 +116,7 @@ namespace CW
             }
         }
 
-        private void loadGroupInfoBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PersonBLL p = new PersonBLL();
-
-                if (this.loadGroupInfoTxtBox.Text.All(Char.IsDigit))
-                {
-                    this.viewGroupDGV.DataSource = p.GetPerson(Convert.ToInt16(this.loadGroupInfoTxtBox.Text)); // search ID 
-                }
-                else
-                {
-                    this.viewGroupDGV.DataSource = p.GetPersons(this.loadGroupInfoTxtBox.Text); // search by name
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error Occurred");
-            }
-        }
+        
 
         private void AddTeacherBtn_Click(object sender, EventArgs e)
         {
@@ -267,11 +230,6 @@ namespace CW
 
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -357,11 +315,6 @@ namespace CW
 
         }
 
-        private void label15_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void PersonDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -374,8 +327,31 @@ namespace CW
 
         private void editTeacherBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int personId = Convert.ToInt32(editIDtb.Text);
+                string name = nameTB.Text;
+                string telephone = telephoneTB.Text;
+                string email = emailTB.Text;
+                string role = teacherLb.Text;
+                decimal salary = Convert.ToDecimal(salaryTB.Text);
+                string subject1 = subject1TB.Text;
+                string subject2 = subject2TB.Text;
 
+                PersonBLL p = new PersonBLL();
+                p.EditPerson(personId, name, telephone, email, role); // Edit person details
+                p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
+
+                this.PersonDGV.DataSource = p.GetTeachers();
+
+                MessageBox.Show("Teacher edited successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occurred: " + ex.Message);
+            }
         }
+
 
         private void ViewTeacherBtn_Click(object sender, EventArgs e)
         {
@@ -388,6 +364,11 @@ namespace CW
             {
                 MessageBox.Show("Error Occurred");
             }
+        }
+
+        private void label40_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

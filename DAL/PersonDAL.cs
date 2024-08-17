@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using static CW.PersonDAL;
 
 namespace CW
 {
@@ -259,6 +260,36 @@ namespace CW
             }
         }
 
+        public int UpdatePerson(int personId, string name, string telephone, string email, string role)
+        {
+            con.ConnectionString = ConString;
+            if (ConnectionState.Closed == con.State)
+                con.Open();
+
+            string query = "UPDATE Person SET Name = @Name, Telephone = @Telephone, Email = @Email, Role = @Role WHERE PersonId = @PersonId";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@PersonId", personId);
+            cmd.Parameters.AddWithValue("@Name", name);
+            cmd.Parameters.AddWithValue("@Telephone", telephone);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Role", role);
+
+            try
+            {
+                int rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error updating person", ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
         public void CreateTeacher(int personId, decimal salary, string subject1, string subject2)
         {
             con.ConnectionString = ConString;
@@ -279,6 +310,33 @@ namespace CW
             catch (Exception ex)
             {
                 throw new Exception("Error creating teacher", ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void UpdateTeacher(int personId, decimal salary, string subject1, string subject2)
+        {
+            con.ConnectionString = ConString;
+            if (ConnectionState.Closed == con.State)
+                con.Open();
+
+            string query = "UPDATE Teacher SET Salary = @Salary, Subject1 = @Subject1, Subject2 = @Subject2 WHERE PersonId = @PersonId";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@PersonId", personId);
+            cmd.Parameters.AddWithValue("@Salary", salary);
+            cmd.Parameters.AddWithValue("@Subject1", subject1);
+            cmd.Parameters.AddWithValue("@Subject2", subject2);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error updating teacher", ex);
             }
             finally
             {
