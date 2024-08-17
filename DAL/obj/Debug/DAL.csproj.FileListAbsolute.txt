@@ -1,0 +1,14 @@
+E:\appdev\appdev-main\cw\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\appdev\appdev-main\cw\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\appdev\appdev-main\cw\DAL\bin\Debug\DAL.exe.config
+E:\appdev\appdev-main\cw\DAL\bin\Debug\DAL.exe
+E:\appdev\appdev-main\cw\DAL\bin\Debug\DAL.pdb
+E:\appdev\appdev-main\cw\DAL\obj\Debug\DAL.exe
+E:\appdev\appdev-main\cw\DAL\obj\Debug\DAL.pdb
+C:\Users\Asus\source\repos\CW\DAL\bin\Debug\DAL.exe.config
+C:\Users\Asus\source\repos\CW\DAL\bin\Debug\DAL.exe
+C:\Users\Asus\source\repos\CW\DAL\bin\Debug\DAL.pdb
+C:\Users\Asus\source\repos\CW\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\CW\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\CW\DAL\obj\Debug\DAL.exe
+C:\Users\Asus\source\repos\CW\DAL\obj\Debug\DAL.pdb
