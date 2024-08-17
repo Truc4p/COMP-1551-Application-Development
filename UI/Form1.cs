@@ -17,11 +17,7 @@ namespace CW
         {
             InitializeComponent();
             this.PersonDGV.SelectionChanged += new System.EventHandler(this.PersonDGV_SelectionChanged);
-            // this.PersonDGV.SelectionChanged += new System.EventHandler(this.viewGroupDGV_SelectionChanged);
-            
-
-
-
+            this.viewGroupDGV.SelectionChanged += new System.EventHandler(this.viewGroupDGV_SelectionChanged);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -57,7 +53,7 @@ namespace CW
             }
         }
 
-        /*private void viewGroupDGV_SelectionChanged(object sender, EventArgs e)
+        private void viewGroupDGV_SelectionChanged(object sender, EventArgs e)
         {
             if (viewGroupDGV.SelectedRows.Count > 0)
             {
@@ -70,7 +66,7 @@ namespace CW
                 PersonBLL p = new PersonBLL();
                 this.viewGroupDGV.DataSource = p.GetPersonInfo(personId, personRole);
             }
-        }*/
+        }
 
 
         
@@ -110,25 +106,14 @@ namespace CW
             }
         }
 
-        private void ViewTeacherBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PersonBLL p = new PersonBLL();
-                this.viewGroupDGV.DataSource = p.GetTeachers();
-            }
-            catch
-            {
-                MessageBox.Show("Error Occurred");
-            }
-        }
+
 
         private void ViewAdminBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 PersonBLL p = new PersonBLL();
-                this.viewGroupDGV.DataSource = p.GetAdmins();
+                this.PersonDGV.DataSource = p.GetAdmins();
             }
             catch
             {
@@ -141,7 +126,7 @@ namespace CW
             try
             {
                 PersonBLL p = new PersonBLL();
-                this.viewGroupDGV.DataSource = p.GetStudents();
+                this.PersonDGV.DataSource = p.GetStudents();
             }
             catch
             {
@@ -186,7 +171,7 @@ namespace CW
                 int personId = p.AddPerson(name, telephone, email, role); // Add person and get the PersonId
                 p.AddTeacher(personId, salary, subject1, subject2); // Add teacher with the PersonId
 
-                this.viewAfterAddDGV.DataSource = p.GetTeachers();
+                this.PersonDGV.DataSource = p.GetTeachers();
 
                 MessageBox.Show("Teacher added successfully");
             }
@@ -212,7 +197,7 @@ namespace CW
                 int personId = p.AddPerson(name, telephone, email, role); // Add person and get the PersonId
                 p.AddAdmin(personId, salary, employmenttype, workinghours); // Add admin with the PersonId
 
-                this.addAdminDgv.DataSource = p.GetAdmins();
+                this.PersonDGV.DataSource = p.GetAdmins();
 
                 MessageBox.Show("Admin added successfully");
             }
@@ -239,7 +224,7 @@ namespace CW
                 int personId = p.AddPerson(name, telephone, email, role); // Add person and get the PersonId
                 p.AddStudent(personId, currentsubject1, currentsubject2, previoussubject1, previoussubject2); // Add teacher with the PersonId
 
-                this.addStudentDgv.DataSource = p.GetStudents();
+                this.PersonDGV.DataSource = p.GetStudents();
 
                 MessageBox.Show("Student added successfully");
             }
@@ -390,6 +375,19 @@ namespace CW
         private void editTeacherBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ViewTeacherBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PersonBLL p = new PersonBLL();
+                this.PersonDGV.DataSource = p.GetTeachers();
+            }
+            catch
+            {
+                MessageBox.Show("Error Occurred");
+            }
         }
     }
 }
