@@ -111,6 +111,8 @@ namespace CW
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.edit = new System.Windows.Forms.Label();
+            this.editIDtb = new System.Windows.Forms.TextBox();
             this.teacherLb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.telephoneTB = new System.Windows.Forms.TextBox();
@@ -128,8 +130,9 @@ namespace CW
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.editIDtb = new System.Windows.Forms.TextBox();
-            this.edit = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.editIdAdminTb = new System.Windows.Forms.TextBox();
+            this.editAdminBtn = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -849,6 +852,9 @@ namespace CW
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.label40);
+            this.tabPage7.Controls.Add(this.editIdAdminTb);
+            this.tabPage7.Controls.Add(this.editAdminBtn);
             this.tabPage7.Controls.Add(this.AddAdminBtn);
             this.tabPage7.Controls.Add(this.adminLb);
             this.tabPage7.Controls.Add(this.telep1lb);
@@ -1024,6 +1030,23 @@ namespace CW
             this.tabPage6.Text = "Teacher";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // edit
+            // 
+            this.edit.AutoSize = true;
+            this.edit.Location = new System.Drawing.Point(704, 74);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(67, 16);
+            this.edit.TabIndex = 49;
+            this.edit.Text = "PersonId :";
+            this.edit.Click += new System.EventHandler(this.label40_Click);
+            // 
+            // editIDtb
+            // 
+            this.editIDtb.Location = new System.Drawing.Point(801, 68);
+            this.editIDtb.Name = "editIDtb";
+            this.editIDtb.Size = new System.Drawing.Size(220, 22);
+            this.editIDtb.TabIndex = 48;
+            // 
             // teacherLb
             // 
             this.teacherLb.AutoSize = true;
@@ -1169,22 +1192,31 @@ namespace CW
             this.tabControl2.Size = new System.Drawing.Size(1637, 245);
             this.tabControl2.TabIndex = 60;
             // 
-            // editIDtb
+            // label40
             // 
-            this.editIDtb.Location = new System.Drawing.Point(801, 68);
-            this.editIDtb.Name = "editIDtb";
-            this.editIDtb.Size = new System.Drawing.Size(220, 22);
-            this.editIDtb.TabIndex = 48;
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(782, 72);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(67, 16);
+            this.label40.TabIndex = 57;
+            this.label40.Text = "PersonId :";
             // 
-            // edit
+            // editIdAdminTb
             // 
-            this.edit.AutoSize = true;
-            this.edit.Location = new System.Drawing.Point(704, 74);
-            this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(81, 16);
-            this.edit.TabIndex = 49;
-            this.edit.Text = "ID or Name :";
-            this.edit.Click += new System.EventHandler(this.label40_Click);
+            this.editIdAdminTb.Location = new System.Drawing.Point(879, 66);
+            this.editIdAdminTb.Name = "editIdAdminTb";
+            this.editIdAdminTb.Size = new System.Drawing.Size(220, 22);
+            this.editIdAdminTb.TabIndex = 56;
+            // 
+            // editAdminBtn
+            // 
+            this.editAdminBtn.Location = new System.Drawing.Point(785, 24);
+            this.editAdminBtn.Name = "editAdminBtn";
+            this.editAdminBtn.Size = new System.Drawing.Size(314, 38);
+            this.editAdminBtn.TabIndex = 55;
+            this.editAdminBtn.Text = "Edit Admin";
+            this.editAdminBtn.UseVisualStyleBackColor = true;
+            this.editAdminBtn.Click += new System.EventHandler(this.editAdminBtn_Click);
             // 
             // Form1
             // 
@@ -1340,5 +1372,8 @@ namespace CW
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.Label edit;
         private System.Windows.Forms.TextBox editIDtb;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox editIdAdminTb;
+        private System.Windows.Forms.Button editAdminBtn;
     }
 }

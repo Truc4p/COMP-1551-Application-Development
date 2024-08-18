@@ -135,18 +135,36 @@ namespace CW
             }
         }
 
-        public int EditPerson(int personId, string name, string telephone, string email, string role)
+
+        public int EditPerson(int personId, string name = null, string telephone = null, string email = null, string role = null)
         {
             try
             {
                 PersonDAL objdal = new PersonDAL();
                 return objdal.UpdatePerson(personId, name, telephone, email, role);
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                // Log or display the exception details
+                throw new Exception("Error updating person: " + ex.Message, ex);
             }
         }
+
+
+        public void EditTeacher(int personId, decimal? salary = null, string subject1 = null, string subject2 = null)
+        {
+            try
+            {
+                PersonDAL objdal = new PersonDAL();
+                objdal.UpdateTeacher(personId, salary, subject1, subject2);
+            }
+            catch (Exception ex)
+            {
+                // Log or display the exception details
+                throw new Exception("Error updating teacher: " + ex.Message, ex);
+            }
+        }
+
 
         public void AddTeacher(int personId, decimal salary, string subject1, string subject2)
         {
@@ -161,18 +179,7 @@ namespace CW
             }
         }
 
-        public void EditTeacher(int personId, decimal salary, string subject1, string subject2)
-        {
-            try
-            {
-                PersonDAL objdal = new PersonDAL();
-                objdal.UpdateTeacher(personId, salary, subject1, subject2);
-            }
-            catch
-            {
-                throw;
-            }
-        }
+        
 
         public void AddAdmin(int personId, decimal salary, string employmenttype, decimal workinghours)
         {

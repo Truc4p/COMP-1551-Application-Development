@@ -260,34 +260,9 @@ namespace CW
             }
         }
 
-        public int UpdatePerson(int personId, string name, string telephone, string email, string role)
-        {
-            con.ConnectionString = ConString;
-            if (ConnectionState.Closed == con.State)
-                con.Open();
+        
 
-            string query = "UPDATE Person SET Name = @Name, Telephone = @Telephone, Email = @Email, Role = @Role WHERE PersonId = @PersonId";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@PersonId", personId);
-            cmd.Parameters.AddWithValue("@Name", name);
-            cmd.Parameters.AddWithValue("@Telephone", telephone);
-            cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Role", role);
-
-            try
-            {
-                int rowsAffected = cmd.ExecuteNonQuery();
-                return rowsAffected;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error updating person", ex);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+        
 
 
         public void CreateTeacher(int personId, decimal salary, string subject1, string subject2)
@@ -317,18 +292,70 @@ namespace CW
             }
         }
 
-        public void UpdateTeacher(int personId, decimal salary, string subject1, string subject2)
+        public int UpdatePerson(int personId, string name = null, string telephone = null, string email = null, string role = null)
         {
             con.ConnectionString = ConString;
             if (ConnectionState.Closed == con.State)
                 con.Open();
 
-            string query = "UPDATE Teacher SET Salary = @Salary, Subject1 = @Subject1, Subject2 = @Subject2 WHERE PersonId = @PersonId";
+            List<string> updateFields = new List<string>();
+            if (!string.IsNullOrEmpty(name)) updateFields.Add("Name = @Name");
+            if (!string.IsNullOrEmpty(telephone)) updateFields.Add("Telephone = @Telephone");
+            if (!string.IsNullOrEmpty(email)) updateFields.Add("Email = @Email");
+            if (!string.IsNullOrEmpty(role)) updateFields.Add("Role = @Role");
+
+            if (updateFields.Count == 0)
+            {
+                throw new Exception("No fields to update");
+            }
+
+            string query = $"UPDATE Person SET {string.Join(", ", updateFields)} WHERE PersonId = @PersonId";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@PersonId", personId);
-            cmd.Parameters.AddWithValue("@Salary", salary);
-            cmd.Parameters.AddWithValue("@Subject1", subject1);
-            cmd.Parameters.AddWithValue("@Subject2", subject2);
+            if (!string.IsNullOrEmpty(name)) cmd.Parameters.AddWithValue("@Name", name);
+            if (!string.IsNullOrEmpty(telephone)) cmd.Parameters.AddWithValue("@Telephone", telephone);
+            if (!string.IsNullOrEmpty(email)) cmd.Parameters.AddWithValue("@Email", email);
+            if (!string.IsNullOrEmpty(role)) cmd.Parameters.AddWithValue("@Role", role);
+
+            try
+            {
+                int rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error updating person", ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+
+        public void UpdateTeacher(int personId, decimal? salary = null, string subject1 = null, string subject2 = null)
+        {
+            con.ConnectionString = ConString;
+            if (ConnectionState.Closed == con.State)
+                con.Open();
+
+            List<string> updateFields = new List<string>();
+            if (salary.HasValue) updateFields.Add("Salary = @Salary");
+            if (!string.IsNullOrEmpty(subject1)) updateFields.Add("Subject1 = @Subject1");
+            if (!string.IsNullOrEmpty(subject2)) updateFields.Add("Subject2 = @Subject2");
+
+            if (updateFields.Count == 0)
+            {
+                throw new Exception("No fields to update");
+            }
+
+            string query = $"UPDATE Teacher SET {string.Join(", ", updateFields)} WHERE PersonId = @PersonId";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@PersonId", personId);
+            if (salary.HasValue) cmd.Parameters.AddWithValue("@Salary", salary.Value);
+            if (!string.IsNullOrEmpty(subject1)) cmd.Parameters.AddWithValue("@Subject1", subject1);
+            if (!string.IsNullOrEmpty(subject2)) cmd.Parameters.AddWithValue("@Subject2", subject2);
 
             try
             {
@@ -336,13 +363,17 @@ namespace CW
             }
             catch (Exception ex)
             {
-                throw new Exception("Error updating teacher", ex);
+                throw new Exception("Error updating teacher: " + ex.Message, ex);
             }
             finally
             {
                 con.Close();
             }
         }
+
+
+
+
 
         public void CreateAdmin(int personId, decimal salary, string employmenttype, decimal workinghours)
         {

@@ -13,11 +13,40 @@ namespace CW
 {
     public partial class Form1 : Form
     {
+        // Boolean flags to track changes
+        private bool isNameChanged = false;
+        private bool isTelephoneChanged = false;
+        private bool isEmailChanged = false;
+        private bool isRoleChanged = false;
+        private bool isSalaryChanged = false;
+        private bool isSubject1Changed = false;
+        private bool isSubject2Changed = false;
+
         public Form1()
         {
             InitializeComponent();
             this.PersonDGV.SelectionChanged += new System.EventHandler(this.PersonDGV_SelectionChanged);
+
+            // Attach event handlers to TextChanged events
+            nameTB.TextChanged += nameTB_TextChanged;
+            telephoneTB.TextChanged += telephoneTB_TextChanged;
+            emailTB.TextChanged += emailTB_TextChanged;
+            teacherLb.TextChanged += teacherLb_TextChanged;
+            salaryTB.TextChanged += salaryTB_TextChanged;
+            subject1TB.TextChanged += subject1TB_TextChanged;
+            subject2TB.TextChanged += subject2TB_TextChanged;
         }
+
+        // Event handler methods
+        private void nameTB_TextChanged(object sender, EventArgs e) => isNameChanged = true;
+        private void telephoneTB_TextChanged(object sender, EventArgs e) => isTelephoneChanged = true;
+        private void emailTB_TextChanged(object sender, EventArgs e) => isEmailChanged = true;
+        private void teacherLb_TextChanged(object sender, EventArgs e) => isRoleChanged = true;
+        private void salaryTB_TextChanged(object sender, EventArgs e) => isSalaryChanged = true;
+        private void subject1TB_TextChanged(object sender, EventArgs e) => isSubject1Changed = true;
+        private void subject2TB_TextChanged(object sender, EventArgs e) => isSubject2Changed = true;
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -325,20 +354,22 @@ namespace CW
 
         }
 
-        private void editTeacherBtn_Click(object sender, EventArgs e)
+        /*private void editTeacherBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 int personId = Convert.ToInt32(editIDtb.Text);
-                string name = nameTB.Text;
-                string telephone = telephoneTB.Text;
-                string email = emailTB.Text;
-                string role = teacherLb.Text;
-                decimal salary = Convert.ToDecimal(salaryTB.Text);
-                string subject1 = subject1TB.Text;
-                string subject2 = subject2TB.Text;
+                string name = isNameChanged ? nameTB.Text : null;
+                string telephone = isTelephoneChanged ? telephoneTB.Text : null;
+                string email = isEmailChanged ? emailTB.Text : null;
+                string role = isRoleChanged ? teacherLb.Text : null;
+                decimal? salary = isSalaryChanged ? (decimal?)Convert.ToDecimal(salaryTB.Text) : null;
+                string subject1 = isSubject1Changed ? subject1TB.Text : null;
+                string subject2 = isSubject2Changed ? subject2TB.Text : null;
 
                 PersonBLL p = new PersonBLL();
+
+                // Optional: Wrap both calls in a single try-catch or transaction if needed
                 p.EditPerson(personId, name, telephone, email, role); // Edit person details
                 p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
 
@@ -350,7 +381,53 @@ namespace CW
             {
                 MessageBox.Show("Error Occurred: " + ex.Message);
             }
+        }*/
+
+        private void editTeacherBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int personId = Convert.ToInt32(editIDtb.Text);
+                string name = isNameChanged ? nameTB.Text : null;
+                string telephone = isTelephoneChanged ? telephoneTB.Text : null;
+                string email = isEmailChanged ? emailTB.Text : null;
+                string role = isRoleChanged ? teacherLb.Text : null;
+                decimal? salary = isSalaryChanged ? (decimal?)Convert.ToDecimal(salaryTB.Text) : null;
+                string subject1 = isSubject1Changed ? subject1TB.Text : null;
+                string subject2 = isSubject2Changed ? subject2TB.Text : null;
+
+                // Check if at least one field is provided for updating
+                if (name == null && telephone == null && email == null && role == null)
+                {
+                    MessageBox.Show("No fields to update for person.");
+                    return;
+                }
+
+                PersonBLL p = new PersonBLL();
+                p.EditPerson(personId, name, telephone, email, role); // Edit person details
+
+                // Check if at least one field is provided for updating teacher
+                if (salary == null && subject1 == null && subject2 == null)
+                {
+                    MessageBox.Show("No fields to update for teacher.");
+                    return;
+                }
+
+                p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
+
+                this.PersonDGV.DataSource = p.GetTeachers();
+
+                MessageBox.Show("Teacher edited successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occurred: " + ex.Message);
+            }
         }
+
+
+
+
 
 
         private void ViewTeacherBtn_Click(object sender, EventArgs e)
@@ -369,6 +446,48 @@ namespace CW
         private void label40_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void editAdminBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int personId = Convert.ToInt32(editIDtb.Text);
+                string name = isNameChanged ? nameTB.Text : null;
+                string telephone = isTelephoneChanged ? telephoneTB.Text : null;
+                string email = isEmailChanged ? emailTB.Text : null;
+                string role = isRoleChanged ? teacherLb.Text : null;
+                decimal? salary = isSalaryChanged ? (decimal?)Convert.ToDecimal(salaryTB.Text) : null;
+                string employmenttype = isSubject1Changed ? emptyptb.Text : null;
+                string workinghours = isSubject2Changed ? worhoutb.Text : null;
+
+                // Check if at least one field is provided for updating
+                if (name == null && telephone == null && email == null && role == null)
+                {
+                    MessageBox.Show("No fields to update for person.");
+                    return;
+                }
+
+                PersonBLL p = new PersonBLL();
+                p.EditPerson(personId, name, telephone, email, role); // Edit person details
+
+                // Check if at least one field is provided for updating teacher
+                if (salary == null && subject1 == null && subject2 == null)
+                {
+                    MessageBox.Show("No fields to update for teacher.");
+                    return;
+                }
+
+                p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
+
+                this.PersonDGV.DataSource = p.GetTeachers();
+
+                MessageBox.Show("Teacher edited successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occurred: " + ex.Message);
+            }
         }
     }
 }
