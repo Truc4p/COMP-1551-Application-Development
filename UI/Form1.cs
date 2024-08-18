@@ -115,15 +115,17 @@ namespace CW
             }
         }
 
-        
-
-
-        
-
         private void LoadDataInfoBtn_Click(object sender, EventArgs e)
         {
             try
             {
+                // Check if LoadDataInfoTxtBox is empty or contains only whitespace
+                if (string.IsNullOrWhiteSpace(this.LoadDataInfoTxtBox.Text))
+                {
+                    MessageBox.Show("Please enter a valid PersonId or Name.");
+                    return;
+                }
+
                 PersonBLL p = new PersonBLL();
      
                 if (this.LoadDataInfoTxtBox.Text.All(Char.IsDigit))
@@ -457,6 +459,11 @@ namespace CW
         }
 
         private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage8_Click(object sender, EventArgs e)
         {
 
         }
