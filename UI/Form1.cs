@@ -288,136 +288,6 @@ namespace CW
             }
         }
 
-        private void LoadDataInfoTxtBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void checkGroupInfo_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void viewAfterAddDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void viewGroupDGV_CellContentClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PersonDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void viewGroupDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label40_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adminLb_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void editIDtb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void editTeacherBtn_Click(object sender, EventArgs e)
         {
             try
@@ -542,11 +412,6 @@ namespace CW
             }
         }
 
-        private void tabPage6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             try
@@ -571,17 +436,27 @@ namespace CW
             }
         }
 
+        private void label40_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adminLb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editIDtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void aToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void tabPage6_Click(object sender, EventArgs e)
         {
 
         }
