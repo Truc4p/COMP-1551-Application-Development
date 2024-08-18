@@ -230,5 +230,19 @@ namespace CW
                 throw;
             }
         }
+
+        public void DeletePerson(int personId)
+        {
+            try
+            {
+                PersonDAL objdal = new PersonDAL();
+                objdal.DeletePerson(personId);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }

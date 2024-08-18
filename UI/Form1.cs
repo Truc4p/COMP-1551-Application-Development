@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static CW.PersonDAL;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CW
 {
@@ -44,8 +46,8 @@ namespace CW
             emailTB.TextChanged += emailTB_TextChanged;
 
             teacherLb.TextChanged += teacherLb_TextChanged;
-            adminLb.TextChanged += teacherLb_TextChanged;
-            stulb.TextChanged += teacherLb_TextChanged;
+            adminLb.TextChanged += adminLb_TextChanged;
+            stulb.TextChanged += stulb_TextChanged;
 
             salaryTB.TextChanged += salaryTB_TextChanged;
             subject1TB.TextChanged += subject1TB_TextChanged;
@@ -68,16 +70,16 @@ namespace CW
 
         private void teacherLb_TextChanged(object sender, EventArgs e) => isRoleChanged = true;
         private void adminLb_TextChanged(object sender, EventArgs e) => isRoleChanged = true;
-        private void studentLb_TextChanged(object sender, EventArgs e) => isRoleChanged = true;
+        private void stulb_TextChanged(object sender, EventArgs e) => isRoleChanged = true;
 
 
         private void salaryTB_TextChanged(object sender, EventArgs e) => isSalaryChanged = true;
         private void subject1TB_TextChanged(object sender, EventArgs e) => isSubject1Changed = true;
         private void subject2TB_TextChanged(object sender, EventArgs e) => isSubject2Changed = true;
 
-        private void salaryAtb_TextChanged(object sender, EventArgs e) => isSalaryChanged = true;
+        private void salaryAtb_TextChanged(object sender, EventArgs e) => isSalaryAChanged = true;
         private void emptyptb_TextChanged(object sender, EventArgs e) => isEmploymentTypeChanged = true;
-        private void workhoutb_TextChanged(object sender, EventArgs e) => isWorkingHoursChanged = true;
+        private void worhoutb_TextChanged(object sender, EventArgs e) => isWorkingHoursChanged = true;
 
         private void currentsubject1tb_TextChanged(object sender, EventArgs e) => isCurrentSubject1Changed = true;
         private void currentsubject2tb_TextChanged(object sender, EventArgs e) => isCurrentSubject2Changed = true;
@@ -411,11 +413,6 @@ namespace CW
 
         }
 
-        private void worhoutb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void editIDtb_TextChanged(object sender, EventArgs e)
         {
 
@@ -542,6 +539,35 @@ namespace CW
             catch (Exception ex)
             {
                 MessageBox.Show("Error Occurred: " + ex.Message);
+            }
+        }
+
+        private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check if deleteTb is empty or contains non-numeric characters
+                if (string.IsNullOrWhiteSpace(deleteTb.Text) || !int.TryParse(deleteTb.Text, out int personId))
+                {
+                    MessageBox.Show("Please enter a valid PersonId.");
+                    return;
+                }
+
+                PersonBLL p = new PersonBLL();
+                p.DeletePerson(personId); 
+
+                this.PersonDGV.DataSource = p.GetPersons();
+
+                MessageBox.Show("Person deleted successfully");
+            }
+            catch
+            {
+                MessageBox.Show("Error Occurred");
             }
         }
     }

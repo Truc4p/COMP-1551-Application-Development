@@ -500,23 +500,27 @@ namespace CW
             }
         }
 
-        // Method to delete a person
-        public void Delete(Person person)
+        public void DeletePerson(int personId)
         {
-            using (SqlConnection con = new SqlConnection(ConString))
-            {
+            con.ConnectionString = ConString;
+            if (ConnectionState.Closed == con.State)
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM Person WHERE Name = @Name", con);
-                cmd.Parameters.AddWithValue("@Name", person.Name);
 
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error deleting data", ex);
-                }
+            string query = "DELETE FROM Person WHERE PersonId = @PersonId";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@PersonId", personId);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error deleting person", ex);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 

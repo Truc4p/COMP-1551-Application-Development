@@ -1,0 +1,153 @@
+DROP TABLE IF EXISTS Teacher;
+
+DROP TABLE IF EXISTS Admin;
+DROP TABLE IF EXISTS Student;
+
+DROP TABLE IF EXISTS Person;
+
+-- Base table for Person
+CREATE TABLE Person (
+    PersonId INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(100) NOT NULL,
+    Telephone VARCHAR(15),
+    Email VARCHAR(100),
+    Role VARCHAR(50)
+);
+
+-- Table for Teachers, extending Person with ON DELETE CASCADE
+CREATE TABLE Teacher (
+    TeacherId INT PRIMARY KEY IDENTITY(1,1),
+    PersonId INT,
+    Salary FLOAT,
+    Subject1 VARCHAR(100),
+    Subject2 VARCHAR(100),
+    FOREIGN KEY (PersonId) REFERENCES Person(PersonId) ON DELETE CASCADE
+);
+
+-- Table for Admins, extending Person with ON DELETE CASCADE
+CREATE TABLE Admin (
+    AdminId INT PRIMARY KEY IDENTITY(1,1),
+    PersonId INT,
+    Salary FLOAT,
+    EmploymentType VARCHAR(50),
+    WorkingHours INT,
+    FOREIGN KEY (PersonId) REFERENCES Person(PersonId) ON DELETE CASCADE
+);
+
+-- Table for Students, extending Person with ON DELETE CASCADE
+CREATE TABLE Student (
+    StudentId INT PRIMARY KEY IDENTITY(1,1),
+    PersonId INT,
+    CurrentSubject1 VARCHAR(100),
+    CurrentSubject2 VARCHAR(100),
+    PreviousSubject1 VARCHAR(100),
+    PreviousSubject2 VARCHAR(100),
+    FOREIGN KEY (PersonId) REFERENCES Person(PersonId) ON DELETE CASCADE
+);
+
+
+-- Inserting 45 rows into the Person table
+INSERT INTO Person (Name, Telephone, Email, Role) VALUES 
+('Alice Johnson', '555-1234', 'alice@example.com', 'Teacher'),
+('Bob Smith', '555-5678', 'bob@example.com', 'Admin'),
+('Charlie Brown', '555-8765', 'charlie@example.com', 'Student'),
+('David Williams', '555-4321', 'david@example.com', 'Teacher'),
+('Eva Green', '555-6789', 'eva@example.com', 'Admin'),
+('Frank Taylor', '555-9876', 'frank@example.com', 'Student'),
+('Grace Lee', '555-1357', 'grace@example.com', 'Teacher'),
+('Henry King', '555-2468', 'henry@example.com', 'Admin'),
+('Ivy Moore', '555-9753', 'ivy@example.com', 'Student'),
+('Jack White', '555-7531', 'jack@example.com', 'Teacher'),
+('Karen Black', '555-8642', 'karen@example.com', 'Admin'),
+('Leo Gray', '555-1593', 'leo@example.com', 'Student'),
+('Mia Stone', '555-9513', 'mia@example.com', 'Teacher'),
+('Nick Ross', '555-1472', 'nick@example.com', 'Admin'),
+('Olivia Evans', '555-2583', 'olivia@example.com', 'Student'),
+('Paul Scott', '555-3694', 'paul@example.com', 'Teacher'),
+('Quincy Adams', '555-7536', 'quincy@example.com', 'Admin'),
+('Rita Clark', '555-1597', 'rita@example.com', 'Student'),
+('Sam Green', '555-7539', 'sam@example.com', 'Teacher'),
+('Tina Hill', '555-9517', 'tina@example.com', 'Admin'),
+('Uma Brooks', '555-8526', 'uma@example.com', 'Student'),
+('Victor Nash', '555-7532', 'victor@example.com', 'Teacher'),
+('Wendy Chase', '555-9516', 'wendy@example.com', 'Admin'),
+('Xander Wood', '555-3698', 'xander@example.com', 'Student'),
+('Yara Long', '555-7534', 'yara@example.com', 'Teacher'),
+('Zachary Day', '555-8524', 'zachary@example.com', 'Admin'),
+('Anna Parker', '555-9512', 'anna@example.com', 'Student'),
+('Brandon Reed', '555-1479', 'brandon@example.com', 'Teacher'),
+('Cindy Powell', '555-2586', 'cindy@example.com', 'Admin'),
+('Derek Hughes', '555-3697', 'derek@example.com', 'Student'),
+('Emily Turner', '555-7538', 'emily@example.com', 'Teacher'),
+('Felix Cooper', '555-9519', 'felix@example.com', 'Admin'),
+('Gina Edwards', '555-7535', 'gina@example.com', 'Student'),
+('Holly Baker', '555-1476', 'holly@example.com', 'Teacher'),
+('Ian Wright', '555-2587', 'ian@example.com', 'Admin'),
+('Jane Hayes', '555-3692', 'jane@example.com', 'Student'),
+('Kyle Fisher', '555-7537', 'kyle@example.com', 'Teacher'),
+('Lily Foster', '555-9515', 'lily@example.com', 'Admin'),
+('Mark Gibson', '555-2589', 'mark@example.com', 'Student'),
+('Nina Warren', '555-3690', 'nina@example.com', 'Teacher'),
+('Oscar Bennett', '555-7530', 'oscar@example.com', 'Admin'),
+('Paula Mitchell', '555-9510', 'paula@example.com', 'Student'),
+('Quinn Robinson', '555-2582', 'quinn@example.com', 'Teacher'),
+('Rose Campbell', '555-3693', 'rose@example.com', 'Admin'),
+('Sean Phillips', '555-7539', 'sean@example.com', 'Student');
+
+-- Inserting 15 rows into the Teacher table
+INSERT INTO Teacher (PersonId, Salary, Subject1, Subject2) VALUES 
+(1, 50000, 'Math', 'Physics'),
+(4, 52000, 'Chemistry', 'Biology'),
+(7, 48000, 'History', 'Geography'),
+(10, 55000, 'English', 'Literature'),
+(13, 53000, 'Art', 'Music'),
+(16, 49000, 'Physical Education', 'Health'),
+(19, 51000, 'Computer Science', 'Math'),
+(22, 56000, 'Economics', 'Business Studies'),
+(25, 58000, 'Physics', 'Astronomy'),
+(28, 54000, 'Biology', 'Environmental Science'),
+(31, 50000, 'Music', 'Drama'),
+(34, 52000, 'Philosophy', 'Psychology'),
+(37, 48000, 'Social Studies', 'Civics'),
+(40, 53000, 'Technology', 'Engineering'),
+(43, 51000, 'Political Science', 'History');
+
+-- Inserting 15 rows into the Admin table
+INSERT INTO Admin (PersonId, Salary, EmploymentType, WorkingHours) VALUES 
+(2, 60000, 'Full-time', 40),
+(5, 62000, 'Part-time', 20),
+(8, 58000, 'Full-time', 40),
+(11, 61000, 'Full-time', 35),
+(14, 59000, 'Part-time', 25),
+(17, 60500, 'Full-time', 40),
+(20, 62500, 'Full-time', 38),
+(23, 64500, 'Part-time', 20),
+(26, 61500, 'Full-time', 36),
+(29, 63000, 'Full-time', 40),
+(32, 60000, 'Part-time', 30),
+(35, 62000, 'Full-time', 37),
+(38, 58500, 'Full-time', 39),
+(41, 63500, 'Full-time', 40),
+(44, 61000, 'Part-time', 25);
+
+-- Inserting 15 rows into the Student table
+INSERT INTO Student (PersonId, CurrentSubject1, CurrentSubject2, PreviousSubject1, PreviousSubject2) VALUES 
+(3, 'Math', 'Science', 'History', 'Geography'),
+(6, 'Biology', 'Chemistry', 'English', 'Literature'),
+(9, 'Physics', 'Math', 'Art', 'Music'),
+(12, 'History', 'Political Science', 'Economics', 'Business Studies'),
+(15, 'Technology', 'Engineering', 'Philosophy', 'Psychology'),
+(18, 'Physical Education', 'Health', 'Music', 'Drama'),
+(21, 'Computer Science', 'Math', 'Social Studies', 'Civics'),
+(24, 'Art', 'History', 'Technology', 'Engineering'),
+(27, 'Biology', 'Environmental Science', 'Economics', 'Business Studies'),
+(30, 'English', 'Literature', 'Political Science', 'History'),
+(33, 'Chemistry', 'Physics', 'Philosophy', 'Psychology'),
+(36, 'Geography', 'Civics', 'Art', 'Drama'),
+(39, 'Economics', 'Business Studies', 'Music', 'Philosophy'),
+(42, 'Math', 'Computer Science', 'Technology', 'Engineering'),
+(45, 'Physics', 'Astronomy', 'Social Studies', 'Civics');
+
+DELETE FROM Person
+WHERE PersonId = 45;
+
