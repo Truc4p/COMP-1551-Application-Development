@@ -79,33 +79,24 @@ namespace CW
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.stulb = new System.Windows.Forms.Label();
             this.addStudentBtn = new System.Windows.Forms.Button();
-            this.tellb = new System.Windows.Forms.TextBox();
-            this.namlb = new System.Windows.Forms.TextBox();
-            this.prj2lb = new System.Windows.Forms.TextBox();
-            this.prj1lb = new System.Windows.Forms.TextBox();
-            this.emalb = new System.Windows.Forms.TextBox();
-            this.cuj2lb = new System.Windows.Forms.TextBox();
-            this.cuj1lb = new System.Windows.Forms.TextBox();
+            this.previoussubject2tb = new System.Windows.Forms.TextBox();
+            this.previoussubject1tb = new System.Windows.Forms.TextBox();
+            this.currentsubject2tb = new System.Windows.Forms.TextBox();
+            this.currentsubject1tb = new System.Windows.Forms.TextBox();
             this.PreviousSubject2Lb = new System.Windows.Forms.Label();
-            this.nameLb = new System.Windows.Forms.Label();
             this.PreviousSubject1Lb = new System.Windows.Forms.Label();
-            this.telephoneLb = new System.Windows.Forms.Label();
             this.CurrentSubject2Lb = new System.Windows.Forms.Label();
-            this.emailLb = new System.Windows.Forms.Label();
             this.CurrentSubject1Lb = new System.Windows.Forms.Label();
             this.roleLb = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label40 = new System.Windows.Forms.Label();
+            this.editIdAdminTb = new System.Windows.Forms.TextBox();
+            this.editAdminBtn = new System.Windows.Forms.Button();
             this.AddAdminBtn = new System.Windows.Forms.Button();
             this.adminLb = new System.Windows.Forms.Label();
-            this.telep1lb = new System.Windows.Forms.TextBox();
-            this.name1lb = new System.Windows.Forms.TextBox();
-            this.email1lb = new System.Windows.Forms.TextBox();
             this.worhoutb = new System.Windows.Forms.TextBox();
             this.emptyptb = new System.Windows.Forms.TextBox();
             this.salaryAtb = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -115,24 +106,24 @@ namespace CW
             this.editIDtb = new System.Windows.Forms.TextBox();
             this.teacherLb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.telephoneTB = new System.Windows.Forms.TextBox();
             this.subject2TB = new System.Windows.Forms.TextBox();
-            this.nameTB = new System.Windows.Forms.TextBox();
             this.subject1TB = new System.Windows.Forms.TextBox();
-            this.emailTB = new System.Windows.Forms.TextBox();
             this.salaryTB = new System.Windows.Forms.TextBox();
             this.editTeacherBtn = new System.Windows.Forms.Button();
             this.AddTeacherBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.telephoneTB = new System.Windows.Forms.TextBox();
+            this.nameTB = new System.Windows.Forms.TextBox();
+            this.emailTB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.label40 = new System.Windows.Forms.Label();
-            this.editIdAdminTb = new System.Windows.Forms.TextBox();
-            this.editAdminBtn = new System.Windows.Forms.Button();
+            this.editStudentBtn = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.editStuIdTb = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -685,35 +676,32 @@ namespace CW
             // 
             // tabPage8
             // 
+            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage8.Controls.Add(this.label12);
+            this.tabPage8.Controls.Add(this.editStuIdTb);
+            this.tabPage8.Controls.Add(this.editStudentBtn);
             this.tabPage8.Controls.Add(this.stulb);
             this.tabPage8.Controls.Add(this.addStudentBtn);
-            this.tabPage8.Controls.Add(this.tellb);
-            this.tabPage8.Controls.Add(this.namlb);
-            this.tabPage8.Controls.Add(this.prj2lb);
-            this.tabPage8.Controls.Add(this.prj1lb);
-            this.tabPage8.Controls.Add(this.emalb);
-            this.tabPage8.Controls.Add(this.cuj2lb);
-            this.tabPage8.Controls.Add(this.cuj1lb);
+            this.tabPage8.Controls.Add(this.previoussubject2tb);
+            this.tabPage8.Controls.Add(this.previoussubject1tb);
+            this.tabPage8.Controls.Add(this.currentsubject2tb);
+            this.tabPage8.Controls.Add(this.currentsubject1tb);
             this.tabPage8.Controls.Add(this.PreviousSubject2Lb);
-            this.tabPage8.Controls.Add(this.nameLb);
             this.tabPage8.Controls.Add(this.PreviousSubject1Lb);
-            this.tabPage8.Controls.Add(this.telephoneLb);
             this.tabPage8.Controls.Add(this.CurrentSubject2Lb);
-            this.tabPage8.Controls.Add(this.emailLb);
             this.tabPage8.Controls.Add(this.CurrentSubject1Lb);
             this.tabPage8.Controls.Add(this.roleLb);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1629, 216);
+            this.tabPage8.Size = new System.Drawing.Size(800, 256);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Student";
-            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // stulb
             // 
             this.stulb.AutoSize = true;
-            this.stulb.Location = new System.Drawing.Point(132, 172);
+            this.stulb.Location = new System.Drawing.Point(166, 19);
             this.stulb.Name = "stulb";
             this.stulb.Size = new System.Drawing.Size(52, 16);
             this.stulb.TabIndex = 56;
@@ -721,7 +709,7 @@ namespace CW
             // 
             // addStudentBtn
             // 
-            this.addStudentBtn.Location = new System.Drawing.Point(578, 27);
+            this.addStudentBtn.Location = new System.Drawing.Point(289, 19);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(160, 38);
             this.addStudentBtn.TabIndex = 55;
@@ -729,113 +717,65 @@ namespace CW
             this.addStudentBtn.UseVisualStyleBackColor = true;
             this.addStudentBtn.Click += new System.EventHandler(this.addStudentBtn_Click);
             // 
-            // tellb
+            // previoussubject2tb
             // 
-            this.tellb.Location = new System.Drawing.Point(135, 78);
-            this.tellb.Name = "tellb";
-            this.tellb.Size = new System.Drawing.Size(100, 22);
-            this.tellb.TabIndex = 2;
+            this.previoussubject2tb.Location = new System.Drawing.Point(169, 209);
+            this.previoussubject2tb.Name = "previoussubject2tb";
+            this.previoussubject2tb.Size = new System.Drawing.Size(100, 22);
+            this.previoussubject2tb.TabIndex = 14;
             // 
-            // namlb
+            // previoussubject1tb
             // 
-            this.namlb.Location = new System.Drawing.Point(135, 30);
-            this.namlb.Name = "namlb";
-            this.namlb.Size = new System.Drawing.Size(100, 22);
-            this.namlb.TabIndex = 0;
+            this.previoussubject1tb.Location = new System.Drawing.Point(169, 160);
+            this.previoussubject1tb.Name = "previoussubject1tb";
+            this.previoussubject1tb.Size = new System.Drawing.Size(100, 22);
+            this.previoussubject1tb.TabIndex = 12;
             // 
-            // prj2lb
+            // currentsubject2tb
             // 
-            this.prj2lb.Location = new System.Drawing.Point(406, 172);
-            this.prj2lb.Name = "prj2lb";
-            this.prj2lb.Size = new System.Drawing.Size(100, 22);
-            this.prj2lb.TabIndex = 14;
+            this.currentsubject2tb.Location = new System.Drawing.Point(169, 112);
+            this.currentsubject2tb.Name = "currentsubject2tb";
+            this.currentsubject2tb.Size = new System.Drawing.Size(100, 22);
+            this.currentsubject2tb.TabIndex = 10;
             // 
-            // prj1lb
+            // currentsubject1tb
             // 
-            this.prj1lb.Location = new System.Drawing.Point(406, 123);
-            this.prj1lb.Name = "prj1lb";
-            this.prj1lb.Size = new System.Drawing.Size(100, 22);
-            this.prj1lb.TabIndex = 12;
-            // 
-            // emalb
-            // 
-            this.emalb.Location = new System.Drawing.Point(135, 126);
-            this.emalb.Name = "emalb";
-            this.emalb.Size = new System.Drawing.Size(100, 22);
-            this.emalb.TabIndex = 4;
-            // 
-            // cuj2lb
-            // 
-            this.cuj2lb.Location = new System.Drawing.Point(406, 75);
-            this.cuj2lb.Name = "cuj2lb";
-            this.cuj2lb.Size = new System.Drawing.Size(100, 22);
-            this.cuj2lb.TabIndex = 10;
-            // 
-            // cuj1lb
-            // 
-            this.cuj1lb.Location = new System.Drawing.Point(406, 27);
-            this.cuj1lb.Name = "cuj1lb";
-            this.cuj1lb.Size = new System.Drawing.Size(100, 22);
-            this.cuj1lb.TabIndex = 8;
+            this.currentsubject1tb.Location = new System.Drawing.Point(169, 64);
+            this.currentsubject1tb.Name = "currentsubject1tb";
+            this.currentsubject1tb.Size = new System.Drawing.Size(100, 22);
+            this.currentsubject1tb.TabIndex = 8;
             // 
             // PreviousSubject2Lb
             // 
             this.PreviousSubject2Lb.AutoSize = true;
-            this.PreviousSubject2Lb.Location = new System.Drawing.Point(270, 175);
+            this.PreviousSubject2Lb.Location = new System.Drawing.Point(33, 212);
             this.PreviousSubject2Lb.Name = "PreviousSubject2Lb";
             this.PreviousSubject2Lb.Size = new System.Drawing.Size(124, 16);
             this.PreviousSubject2Lb.TabIndex = 15;
             this.PreviousSubject2Lb.Text = "Previous Subject 2 :";
             // 
-            // nameLb
-            // 
-            this.nameLb.AutoSize = true;
-            this.nameLb.Location = new System.Drawing.Point(27, 30);
-            this.nameLb.Name = "nameLb";
-            this.nameLb.Size = new System.Drawing.Size(50, 16);
-            this.nameLb.TabIndex = 1;
-            this.nameLb.Text = "Name :";
-            // 
             // PreviousSubject1Lb
             // 
             this.PreviousSubject1Lb.AutoSize = true;
-            this.PreviousSubject1Lb.Location = new System.Drawing.Point(270, 126);
+            this.PreviousSubject1Lb.Location = new System.Drawing.Point(33, 163);
             this.PreviousSubject1Lb.Name = "PreviousSubject1Lb";
             this.PreviousSubject1Lb.Size = new System.Drawing.Size(124, 16);
             this.PreviousSubject1Lb.TabIndex = 13;
             this.PreviousSubject1Lb.Text = "Previous Subject 1 :";
             // 
-            // telephoneLb
-            // 
-            this.telephoneLb.AutoSize = true;
-            this.telephoneLb.Location = new System.Drawing.Point(27, 78);
-            this.telephoneLb.Name = "telephoneLb";
-            this.telephoneLb.Size = new System.Drawing.Size(79, 16);
-            this.telephoneLb.TabIndex = 3;
-            this.telephoneLb.Text = "Telephone :";
-            // 
             // CurrentSubject2Lb
             // 
             this.CurrentSubject2Lb.AutoSize = true;
-            this.CurrentSubject2Lb.Location = new System.Drawing.Point(270, 78);
+            this.CurrentSubject2Lb.Location = new System.Drawing.Point(33, 115);
             this.CurrentSubject2Lb.Name = "CurrentSubject2Lb";
             this.CurrentSubject2Lb.Size = new System.Drawing.Size(113, 16);
             this.CurrentSubject2Lb.TabIndex = 11;
             this.CurrentSubject2Lb.Text = "Current Subject 2 :";
             // 
-            // emailLb
-            // 
-            this.emailLb.AutoSize = true;
-            this.emailLb.Location = new System.Drawing.Point(27, 126);
-            this.emailLb.Name = "emailLb";
-            this.emailLb.Size = new System.Drawing.Size(47, 16);
-            this.emailLb.TabIndex = 5;
-            this.emailLb.Text = "Email :";
-            // 
             // CurrentSubject1Lb
             // 
             this.CurrentSubject1Lb.AutoSize = true;
-            this.CurrentSubject1Lb.Location = new System.Drawing.Point(270, 30);
+            this.CurrentSubject1Lb.Location = new System.Drawing.Point(33, 67);
             this.CurrentSubject1Lb.Name = "CurrentSubject1Lb";
             this.CurrentSubject1Lb.Size = new System.Drawing.Size(113, 16);
             this.CurrentSubject1Lb.TabIndex = 9;
@@ -844,7 +784,7 @@ namespace CW
             // roleLb
             // 
             this.roleLb.AutoSize = true;
-            this.roleLb.Location = new System.Drawing.Point(27, 175);
+            this.roleLb.Location = new System.Drawing.Point(37, 22);
             this.roleLb.Name = "roleLb";
             this.roleLb.Size = new System.Drawing.Size(42, 16);
             this.roleLb.TabIndex = 7;
@@ -857,15 +797,9 @@ namespace CW
             this.tabPage7.Controls.Add(this.editAdminBtn);
             this.tabPage7.Controls.Add(this.AddAdminBtn);
             this.tabPage7.Controls.Add(this.adminLb);
-            this.tabPage7.Controls.Add(this.telep1lb);
-            this.tabPage7.Controls.Add(this.name1lb);
-            this.tabPage7.Controls.Add(this.email1lb);
             this.tabPage7.Controls.Add(this.worhoutb);
             this.tabPage7.Controls.Add(this.emptyptb);
             this.tabPage7.Controls.Add(this.salaryAtb);
-            this.tabPage7.Controls.Add(this.label12);
-            this.tabPage7.Controls.Add(this.label13);
-            this.tabPage7.Controls.Add(this.label14);
             this.tabPage7.Controls.Add(this.label15);
             this.tabPage7.Controls.Add(this.label3);
             this.tabPage7.Controls.Add(this.label9);
@@ -873,14 +807,40 @@ namespace CW
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1629, 216);
+            this.tabPage7.Size = new System.Drawing.Size(800, 256);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Admin";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(469, 71);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(67, 16);
+            this.label40.TabIndex = 57;
+            this.label40.Text = "PersonId :";
+            // 
+            // editIdAdminTb
+            // 
+            this.editIdAdminTb.Location = new System.Drawing.Point(566, 65);
+            this.editIdAdminTb.Name = "editIdAdminTb";
+            this.editIdAdminTb.Size = new System.Drawing.Size(220, 22);
+            this.editIdAdminTb.TabIndex = 56;
+            // 
+            // editAdminBtn
+            // 
+            this.editAdminBtn.Location = new System.Drawing.Point(472, 23);
+            this.editAdminBtn.Name = "editAdminBtn";
+            this.editAdminBtn.Size = new System.Drawing.Size(314, 38);
+            this.editAdminBtn.TabIndex = 55;
+            this.editAdminBtn.Text = "Edit Admin";
+            this.editAdminBtn.UseVisualStyleBackColor = true;
+            this.editAdminBtn.Click += new System.EventHandler(this.editAdminBtn_Click);
+            // 
             // AddAdminBtn
             // 
-            this.AddAdminBtn.Location = new System.Drawing.Point(556, 24);
+            this.AddAdminBtn.Location = new System.Drawing.Point(283, 23);
             this.AddAdminBtn.Name = "AddAdminBtn";
             this.AddAdminBtn.Size = new System.Drawing.Size(160, 38);
             this.AddAdminBtn.TabIndex = 54;
@@ -891,85 +851,40 @@ namespace CW
             // adminLb
             // 
             this.adminLb.AutoSize = true;
-            this.adminLb.Location = new System.Drawing.Point(126, 169);
+            this.adminLb.Location = new System.Drawing.Point(162, 34);
             this.adminLb.Name = "adminLb";
             this.adminLb.Size = new System.Drawing.Size(45, 16);
             this.adminLb.TabIndex = 53;
             this.adminLb.Text = "Admin";
-            // 
-            // telep1lb
-            // 
-            this.telep1lb.Location = new System.Drawing.Point(129, 72);
-            this.telep1lb.Name = "telep1lb";
-            this.telep1lb.Size = new System.Drawing.Size(100, 22);
-            this.telep1lb.TabIndex = 48;
-            // 
-            // name1lb
-            // 
-            this.name1lb.Location = new System.Drawing.Point(129, 24);
-            this.name1lb.Name = "name1lb";
-            this.name1lb.Size = new System.Drawing.Size(100, 22);
-            this.name1lb.TabIndex = 46;
-            // 
-            // email1lb
-            // 
-            this.email1lb.Location = new System.Drawing.Point(129, 120);
-            this.email1lb.Name = "email1lb";
-            this.email1lb.Size = new System.Drawing.Size(100, 22);
-            this.email1lb.TabIndex = 50;
+            this.adminLb.Click += new System.EventHandler(this.adminLb_Click);
             // 
             // worhoutb
             // 
-            this.worhoutb.Location = new System.Drawing.Point(402, 123);
+            this.worhoutb.Location = new System.Drawing.Point(158, 175);
             this.worhoutb.Name = "worhoutb";
             this.worhoutb.Size = new System.Drawing.Size(100, 22);
             this.worhoutb.TabIndex = 41;
+            this.worhoutb.TextChanged += new System.EventHandler(this.worhoutb_TextChanged);
             // 
             // emptyptb
             // 
-            this.emptyptb.Location = new System.Drawing.Point(402, 75);
+            this.emptyptb.Location = new System.Drawing.Point(158, 127);
             this.emptyptb.Name = "emptyptb";
             this.emptyptb.Size = new System.Drawing.Size(100, 22);
             this.emptyptb.TabIndex = 39;
             // 
             // salaryAtb
             // 
-            this.salaryAtb.Location = new System.Drawing.Point(402, 27);
+            this.salaryAtb.Location = new System.Drawing.Point(158, 79);
             this.salaryAtb.Name = "salaryAtb";
             this.salaryAtb.Size = new System.Drawing.Size(100, 22);
             this.salaryAtb.TabIndex = 37;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(38, 27);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 16);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "Name :";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(38, 75);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 16);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Telephone :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(38, 123);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 16);
-            this.label14.TabIndex = 51;
-            this.label14.Text = "Email :";
+            this.salaryAtb.TextChanged += new System.EventHandler(this.salaryAtb_TextChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(38, 172);
+            this.label15.Location = new System.Drawing.Point(22, 31);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(42, 16);
             this.label15.TabIndex = 52;
@@ -978,7 +893,7 @@ namespace CW
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 123);
+            this.label3.Location = new System.Drawing.Point(22, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 16);
             this.label3.TabIndex = 42;
@@ -987,7 +902,7 @@ namespace CW
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(266, 75);
+            this.label9.Location = new System.Drawing.Point(22, 127);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 16);
             this.label9.TabIndex = 40;
@@ -996,7 +911,7 @@ namespace CW
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(266, 27);
+            this.label10.Location = new System.Drawing.Point(22, 79);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 16);
             this.label10.TabIndex = 38;
@@ -1008,24 +923,18 @@ namespace CW
             this.tabPage6.Controls.Add(this.editIDtb);
             this.tabPage6.Controls.Add(this.teacherLb);
             this.tabPage6.Controls.Add(this.label1);
-            this.tabPage6.Controls.Add(this.telephoneTB);
             this.tabPage6.Controls.Add(this.subject2TB);
-            this.tabPage6.Controls.Add(this.nameTB);
             this.tabPage6.Controls.Add(this.subject1TB);
-            this.tabPage6.Controls.Add(this.emailTB);
             this.tabPage6.Controls.Add(this.salaryTB);
             this.tabPage6.Controls.Add(this.editTeacherBtn);
             this.tabPage6.Controls.Add(this.AddTeacherBtn);
             this.tabPage6.Controls.Add(this.label2);
-            this.tabPage6.Controls.Add(this.label8);
-            this.tabPage6.Controls.Add(this.label7);
             this.tabPage6.Controls.Add(this.label4);
-            this.tabPage6.Controls.Add(this.label6);
             this.tabPage6.Controls.Add(this.label5);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1629, 216);
+            this.tabPage6.Size = new System.Drawing.Size(800, 256);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Teacher";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1033,7 +942,7 @@ namespace CW
             // edit
             // 
             this.edit.AutoSize = true;
-            this.edit.Location = new System.Drawing.Point(704, 74);
+            this.edit.Location = new System.Drawing.Point(468, 80);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(67, 16);
             this.edit.TabIndex = 49;
@@ -1042,15 +951,16 @@ namespace CW
             // 
             // editIDtb
             // 
-            this.editIDtb.Location = new System.Drawing.Point(801, 68);
+            this.editIDtb.Location = new System.Drawing.Point(565, 74);
             this.editIDtb.Name = "editIDtb";
             this.editIDtb.Size = new System.Drawing.Size(220, 22);
             this.editIDtb.TabIndex = 48;
+            this.editIDtb.TextChanged += new System.EventHandler(this.editIDtb_TextChanged);
             // 
             // teacherLb
             // 
             this.teacherLb.AutoSize = true;
-            this.teacherLb.Location = new System.Drawing.Point(123, 171);
+            this.teacherLb.Location = new System.Drawing.Point(105, 35);
             this.teacherLb.Name = "teacherLb";
             this.teacherLb.Size = new System.Drawing.Size(58, 16);
             this.teacherLb.TabIndex = 45;
@@ -1059,57 +969,36 @@ namespace CW
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 125);
+            this.label1.Location = new System.Drawing.Point(24, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 42;
             this.label1.Text = "Subject 2 :";
             // 
-            // telephoneTB
-            // 
-            this.telephoneTB.Location = new System.Drawing.Point(126, 74);
-            this.telephoneTB.Name = "telephoneTB";
-            this.telephoneTB.Size = new System.Drawing.Size(100, 22);
-            this.telephoneTB.TabIndex = 31;
-            // 
             // subject2TB
             // 
-            this.subject2TB.Location = new System.Drawing.Point(341, 122);
+            this.subject2TB.Location = new System.Drawing.Point(108, 179);
             this.subject2TB.Name = "subject2TB";
             this.subject2TB.Size = new System.Drawing.Size(100, 22);
             this.subject2TB.TabIndex = 41;
             // 
-            // nameTB
-            // 
-            this.nameTB.Location = new System.Drawing.Point(126, 26);
-            this.nameTB.Name = "nameTB";
-            this.nameTB.Size = new System.Drawing.Size(100, 22);
-            this.nameTB.TabIndex = 29;
-            // 
             // subject1TB
             // 
-            this.subject1TB.Location = new System.Drawing.Point(341, 74);
+            this.subject1TB.Location = new System.Drawing.Point(108, 131);
             this.subject1TB.Name = "subject1TB";
             this.subject1TB.Size = new System.Drawing.Size(100, 22);
             this.subject1TB.TabIndex = 39;
             // 
-            // emailTB
-            // 
-            this.emailTB.Location = new System.Drawing.Point(126, 122);
-            this.emailTB.Name = "emailTB";
-            this.emailTB.Size = new System.Drawing.Size(100, 22);
-            this.emailTB.TabIndex = 33;
-            // 
             // salaryTB
             // 
-            this.salaryTB.Location = new System.Drawing.Point(341, 26);
+            this.salaryTB.Location = new System.Drawing.Point(108, 83);
             this.salaryTB.Name = "salaryTB";
             this.salaryTB.Size = new System.Drawing.Size(100, 22);
             this.salaryTB.TabIndex = 37;
             // 
             // editTeacherBtn
             // 
-            this.editTeacherBtn.Location = new System.Drawing.Point(707, 26);
+            this.editTeacherBtn.Location = new System.Drawing.Point(471, 32);
             this.editTeacherBtn.Name = "editTeacherBtn";
             this.editTeacherBtn.Size = new System.Drawing.Size(314, 38);
             this.editTeacherBtn.TabIndex = 47;
@@ -1119,7 +1008,7 @@ namespace CW
             // 
             // AddTeacherBtn
             // 
-            this.AddTeacherBtn.Location = new System.Drawing.Point(494, 26);
+            this.AddTeacherBtn.Location = new System.Drawing.Point(258, 32);
             this.AddTeacherBtn.Name = "AddTeacherBtn";
             this.AddTeacherBtn.Size = new System.Drawing.Size(160, 38);
             this.AddTeacherBtn.TabIndex = 44;
@@ -1130,16 +1019,55 @@ namespace CW
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(257, 77);
+            this.label2.Location = new System.Drawing.Point(24, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 40;
             this.label2.Text = "Subject 1 :";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 86);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Salary :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 16);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Role :";
+            // 
+            // telephoneTB
+            // 
+            this.telephoneTB.Location = new System.Drawing.Point(342, 400);
+            this.telephoneTB.Name = "telephoneTB";
+            this.telephoneTB.Size = new System.Drawing.Size(100, 22);
+            this.telephoneTB.TabIndex = 31;
+            // 
+            // nameTB
+            // 
+            this.nameTB.Location = new System.Drawing.Point(122, 400);
+            this.nameTB.Name = "nameTB";
+            this.nameTB.Size = new System.Drawing.Size(100, 22);
+            this.nameTB.TabIndex = 29;
+            // 
+            // emailTB
+            // 
+            this.emailTB.Location = new System.Drawing.Point(598, 403);
+            this.emailTB.Name = "emailTB";
+            this.emailTB.Size = new System.Drawing.Size(100, 22);
+            this.emailTB.TabIndex = 33;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 29);
+            this.label8.Location = new System.Drawing.Point(31, 403);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 16);
             this.label8.TabIndex = 30;
@@ -1148,75 +1076,57 @@ namespace CW
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 77);
+            this.label7.Location = new System.Drawing.Point(251, 403);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 16);
             this.label7.TabIndex = 32;
             this.label7.Text = "Telephone :";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(257, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "Salary :";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 125);
+            this.label6.Location = new System.Drawing.Point(507, 406);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 34;
             this.label6.Text = "Email :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 174);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 16);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Role :";
             // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Location = new System.Drawing.Point(26, 375);
+            this.tabControl2.Location = new System.Drawing.Point(34, 450);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1637, 245);
+            this.tabControl2.Size = new System.Drawing.Size(808, 285);
             this.tabControl2.TabIndex = 60;
             // 
-            // label40
+            // editStudentBtn
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(782, 72);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 16);
-            this.label40.TabIndex = 57;
-            this.label40.Text = "PersonId :";
+            this.editStudentBtn.Location = new System.Drawing.Point(472, 19);
+            this.editStudentBtn.Name = "editStudentBtn";
+            this.editStudentBtn.Size = new System.Drawing.Size(314, 38);
+            this.editStudentBtn.TabIndex = 57;
+            this.editStudentBtn.Text = "Edit Student";
+            this.editStudentBtn.UseVisualStyleBackColor = true;
+            this.editStudentBtn.Click += new System.EventHandler(this.editStudentBtn_Click);
             // 
-            // editIdAdminTb
+            // label12
             // 
-            this.editIdAdminTb.Location = new System.Drawing.Point(879, 66);
-            this.editIdAdminTb.Name = "editIdAdminTb";
-            this.editIdAdminTb.Size = new System.Drawing.Size(220, 22);
-            this.editIdAdminTb.TabIndex = 56;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(469, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 16);
+            this.label12.TabIndex = 59;
+            this.label12.Text = "PersonId :";
             // 
-            // editAdminBtn
+            // editStuIdTb
             // 
-            this.editAdminBtn.Location = new System.Drawing.Point(785, 24);
-            this.editAdminBtn.Name = "editAdminBtn";
-            this.editAdminBtn.Size = new System.Drawing.Size(314, 38);
-            this.editAdminBtn.TabIndex = 55;
-            this.editAdminBtn.Text = "Edit Admin";
-            this.editAdminBtn.UseVisualStyleBackColor = true;
-            this.editAdminBtn.Click += new System.EventHandler(this.editAdminBtn_Click);
+            this.editStuIdTb.Location = new System.Drawing.Point(566, 63);
+            this.editStuIdTb.Name = "editStuIdTb";
+            this.editStuIdTb.Size = new System.Drawing.Size(220, 22);
+            this.editStuIdTb.TabIndex = 58;
             // 
             // Form1
             // 
@@ -1226,12 +1136,18 @@ namespace CW
             this.Controls.Add(this.ViewStudentBtn);
             this.Controls.Add(this.ViewAdminBtn);
             this.Controls.Add(this.ViewTeacherBtn);
+            this.Controls.Add(this.telephoneTB);
             this.Controls.Add(this.LoadDataInfoTxtBox);
+            this.Controls.Add(this.nameTB);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.LoadDataInfoBtn);
+            this.Controls.Add(this.emailTB);
             this.Controls.Add(this.ViewAllDataBtn);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.PersonDGV);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1321,33 +1237,21 @@ namespace CW
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Label stulb;
         private System.Windows.Forms.Button addStudentBtn;
-        private System.Windows.Forms.TextBox tellb;
-        private System.Windows.Forms.TextBox namlb;
-        private System.Windows.Forms.TextBox prj2lb;
-        private System.Windows.Forms.TextBox prj1lb;
-        private System.Windows.Forms.TextBox emalb;
-        private System.Windows.Forms.TextBox cuj2lb;
-        private System.Windows.Forms.TextBox cuj1lb;
+        private System.Windows.Forms.TextBox previoussubject2tb;
+        private System.Windows.Forms.TextBox previoussubject1tb;
+        private System.Windows.Forms.TextBox currentsubject2tb;
+        private System.Windows.Forms.TextBox currentsubject1tb;
         private System.Windows.Forms.Label PreviousSubject2Lb;
-        private System.Windows.Forms.Label nameLb;
         private System.Windows.Forms.Label PreviousSubject1Lb;
-        private System.Windows.Forms.Label telephoneLb;
         private System.Windows.Forms.Label CurrentSubject2Lb;
-        private System.Windows.Forms.Label emailLb;
         private System.Windows.Forms.Label CurrentSubject1Lb;
         private System.Windows.Forms.Label roleLb;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Button AddAdminBtn;
         private System.Windows.Forms.Label adminLb;
-        private System.Windows.Forms.TextBox telep1lb;
-        private System.Windows.Forms.TextBox name1lb;
-        private System.Windows.Forms.TextBox email1lb;
         private System.Windows.Forms.TextBox worhoutb;
         private System.Windows.Forms.TextBox emptyptb;
         private System.Windows.Forms.TextBox salaryAtb;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
@@ -1375,5 +1279,8 @@ namespace CW
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox editIdAdminTb;
         private System.Windows.Forms.Button editAdminBtn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox editStuIdTb;
+        private System.Windows.Forms.Button editStudentBtn;
     }
 }

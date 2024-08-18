@@ -260,11 +260,6 @@ namespace CW
             }
         }
 
-        
-
-        
-
-
         public void CreateTeacher(int personId, decimal salary, string subject1, string subject2)
         {
             con.ConnectionString = ConString;
@@ -304,9 +299,10 @@ namespace CW
             if (!string.IsNullOrEmpty(email)) updateFields.Add("Email = @Email");
             if (!string.IsNullOrEmpty(role)) updateFields.Add("Role = @Role");
 
+            // Handle case when no fields are provided
             if (updateFields.Count == 0)
             {
-                throw new Exception("No fields to update");
+                return 0; // No rows updated
             }
 
             string query = $"UPDATE Person SET {string.Join(", ", updateFields)} WHERE PersonId = @PersonId";
@@ -332,8 +328,6 @@ namespace CW
             }
         }
 
-
-
         public void UpdateTeacher(int personId, decimal? salary = null, string subject1 = null, string subject2 = null)
         {
             con.ConnectionString = ConString;
@@ -345,9 +339,10 @@ namespace CW
             if (!string.IsNullOrEmpty(subject1)) updateFields.Add("Subject1 = @Subject1");
             if (!string.IsNullOrEmpty(subject2)) updateFields.Add("Subject2 = @Subject2");
 
+            // Handle case when no fields are provided
             if (updateFields.Count == 0)
             {
-                throw new Exception("No fields to update");
+                return; // No fields to update
             }
 
             string query = $"UPDATE Teacher SET {string.Join(", ", updateFields)} WHERE PersonId = @PersonId";
@@ -371,8 +366,83 @@ namespace CW
             }
         }
 
+        public void UpdateAdmin(int personId, decimal? salary = null, string employmenttype = null, decimal? workinghours = null)
+        {
+            con.ConnectionString = ConString;
+            if (ConnectionState.Closed == con.State)
+                con.Open();
 
+            List<string> updateFields = new List<string>();
+            if (salary.HasValue) updateFields.Add("Salary = @Salary");
+            if (!string.IsNullOrEmpty(employmenttype)) updateFields.Add("EmploymentType = @EmploymentType");
+            if (workinghours.HasValue) updateFields.Add("WorkingHours = @WorkingHours");
 
+            // Handle case when no fields are provided
+            if (updateFields.Count == 0)
+            {
+                return; // No fields to update
+            }
+
+            string query = $"UPDATE Admin SET {string.Join(", ", updateFields)} WHERE PersonId = @PersonId";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@PersonId", personId);
+            if (salary.HasValue) cmd.Parameters.AddWithValue("@Salary", salary.Value);
+            if (!string.IsNullOrEmpty(employmenttype)) cmd.Parameters.AddWithValue("@EmploymentType", employmenttype);
+            if (workinghours.HasValue) cmd.Parameters.AddWithValue("@WorkingHours", workinghours.Value);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error updating Admin: " + ex.Message, ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void UpdateStudent(int personId, string currentSubject1 = null, string currentSubject2 = null, string previousSubject1 = null, string previousSubject2 = null)
+        {
+            con.ConnectionString = ConString;
+            if (ConnectionState.Closed == con.State)
+                con.Open();
+
+            List<string> updateFields = new List<string>();
+            if (!string.IsNullOrEmpty(currentSubject1)) updateFields.Add("CurrentSubject1 = @CurrentSubject1");
+            if (!string.IsNullOrEmpty(currentSubject2)) updateFields.Add("CurrentSubject2 = @CurrentSubject2");
+            if (!string.IsNullOrEmpty(previousSubject1)) updateFields.Add("PreviousSubject1 = @PreviousSubject1");
+            if (!string.IsNullOrEmpty(previousSubject2)) updateFields.Add("PreviousSubject2 = @PreviousSubject2");
+
+            // Handle case when no fields are provided
+            if (updateFields.Count == 0)
+            {
+                return; // No fields to update
+            }
+
+            string query = $"UPDATE Student SET {string.Join(", ", updateFields)} WHERE PersonId = @PersonId";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@PersonId", personId);
+            if (!string.IsNullOrEmpty(currentSubject1)) cmd.Parameters.AddWithValue("@CurrentSubject1", currentSubject1);
+            if (!string.IsNullOrEmpty(currentSubject2)) cmd.Parameters.AddWithValue("@CurrentSubject2", currentSubject2);
+            if (!string.IsNullOrEmpty(previousSubject1)) cmd.Parameters.AddWithValue("@PreviousSubject1", previousSubject1);
+            if (!string.IsNullOrEmpty(previousSubject2)) cmd.Parameters.AddWithValue("@PreviousSubject2", previousSubject2);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error updating student: " + ex.Message, ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
 
         public void CreateAdmin(int personId, decimal salary, string employmenttype, decimal workinghours)

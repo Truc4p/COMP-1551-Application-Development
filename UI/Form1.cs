@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CW.PersonDAL;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CW
@@ -18,9 +19,19 @@ namespace CW
         private bool isTelephoneChanged = false;
         private bool isEmailChanged = false;
         private bool isRoleChanged = false;
+
         private bool isSalaryChanged = false;
         private bool isSubject1Changed = false;
         private bool isSubject2Changed = false;
+
+        private bool isSalaryAChanged = false;
+        private bool isEmploymentTypeChanged = false;
+        private bool isWorkingHoursChanged = false;
+
+        private bool isCurrentSubject1Changed = false;
+        private bool isCurrentSubject2Changed = false;
+        private bool isPreviousSubject1Changed = false;
+        private bool isPreviousSubject2Changed = false;
 
         public Form1()
         {
@@ -31,22 +42,47 @@ namespace CW
             nameTB.TextChanged += nameTB_TextChanged;
             telephoneTB.TextChanged += telephoneTB_TextChanged;
             emailTB.TextChanged += emailTB_TextChanged;
+
             teacherLb.TextChanged += teacherLb_TextChanged;
+            adminLb.TextChanged += teacherLb_TextChanged;
+            stulb.TextChanged += teacherLb_TextChanged;
+
             salaryTB.TextChanged += salaryTB_TextChanged;
             subject1TB.TextChanged += subject1TB_TextChanged;
             subject2TB.TextChanged += subject2TB_TextChanged;
+
+            salaryAtb.TextChanged += salaryAtb_TextChanged;
+            emptyptb.TextChanged += emptyptb_TextChanged;
+            worhoutb.TextChanged += worhoutb_TextChanged;
+
+            currentsubject1tb.TextChanged += currentsubject1tb_TextChanged;
+            currentsubject2tb.TextChanged += currentsubject2tb_TextChanged;
+            previoussubject1tb.TextChanged += previoussubject1tb_TextChanged;
+            previoussubject2tb.TextChanged += previoussubject2tb_TextChanged;
         }
 
         // Event handler methods
         private void nameTB_TextChanged(object sender, EventArgs e) => isNameChanged = true;
         private void telephoneTB_TextChanged(object sender, EventArgs e) => isTelephoneChanged = true;
         private void emailTB_TextChanged(object sender, EventArgs e) => isEmailChanged = true;
+
         private void teacherLb_TextChanged(object sender, EventArgs e) => isRoleChanged = true;
+        private void adminLb_TextChanged(object sender, EventArgs e) => isRoleChanged = true;
+        private void studentLb_TextChanged(object sender, EventArgs e) => isRoleChanged = true;
+
+
         private void salaryTB_TextChanged(object sender, EventArgs e) => isSalaryChanged = true;
         private void subject1TB_TextChanged(object sender, EventArgs e) => isSubject1Changed = true;
         private void subject2TB_TextChanged(object sender, EventArgs e) => isSubject2Changed = true;
 
+        private void salaryAtb_TextChanged(object sender, EventArgs e) => isSalaryChanged = true;
+        private void emptyptb_TextChanged(object sender, EventArgs e) => isEmploymentTypeChanged = true;
+        private void workhoutb_TextChanged(object sender, EventArgs e) => isWorkingHoursChanged = true;
 
+        private void currentsubject1tb_TextChanged(object sender, EventArgs e) => isCurrentSubject1Changed = true;
+        private void currentsubject2tb_TextChanged(object sender, EventArgs e) => isCurrentSubject2Changed = true;
+        private void previoussubject1tb_TextChanged(object sender, EventArgs e) => isPreviousSubject1Changed = true;
+        private void previoussubject2tb_TextChanged(object sender, EventArgs e) => isPreviousSubject2Changed = true;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -117,7 +153,18 @@ namespace CW
             }
         }
 
-
+        private void ViewTeacherBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PersonBLL p = new PersonBLL();
+                this.PersonDGV.DataSource = p.GetTeachers();
+            }
+            catch
+            {
+                MessageBox.Show("Error Occurred");
+            }
+        }
 
         private void ViewAdminBtn_Click(object sender, EventArgs e)
         {
@@ -177,9 +224,9 @@ namespace CW
         {
             try
             {
-                string name = name1lb.Text;
-                string telephone = telep1lb.Text;
-                string email = email1lb.Text;
+                string name = nameTB.Text;
+                string telephone = telephoneTB.Text;
+                string email = emailTB.Text;
                 string role = adminLb.Text;
                 decimal salary = Convert.ToDecimal(salaryAtb.Text);
                 string employmenttype = emptyptb.Text;
@@ -203,14 +250,14 @@ namespace CW
         {
             try
             {
-                string name = namlb.Text;
-                string telephone = tellb.Text;
-                string email = emalb.Text;
+                string name = nameTB.Text;
+                string telephone = telephoneTB.Text;
+                string email = emailTB.Text;
                 string role = stulb.Text;
-                string currentsubject1 = cuj1lb.Text;
-                string currentsubject2 = cuj2lb.Text;
-                string previoussubject1 = prj1lb.Text;
-                string previoussubject2 = prj2lb.Text;
+                string currentsubject1 = currentsubject1tb.Text;
+                string currentsubject2 = currentsubject2tb.Text;
+                string previoussubject1 = previoussubject1tb.Text;
+                string previoussubject2 = previoussubject2tb.Text;
 
                 PersonBLL p = new PersonBLL();
                 int personId = p.AddPerson(name, telephone, email, role); // Add person and get the PersonId
@@ -354,40 +401,37 @@ namespace CW
 
         }
 
-        /*private void editTeacherBtn_Click(object sender, EventArgs e)
+        private void label40_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int personId = Convert.ToInt32(editIDtb.Text);
-                string name = isNameChanged ? nameTB.Text : null;
-                string telephone = isTelephoneChanged ? telephoneTB.Text : null;
-                string email = isEmailChanged ? emailTB.Text : null;
-                string role = isRoleChanged ? teacherLb.Text : null;
-                decimal? salary = isSalaryChanged ? (decimal?)Convert.ToDecimal(salaryTB.Text) : null;
-                string subject1 = isSubject1Changed ? subject1TB.Text : null;
-                string subject2 = isSubject2Changed ? subject2TB.Text : null;
 
-                PersonBLL p = new PersonBLL();
+        }
 
-                // Optional: Wrap both calls in a single try-catch or transaction if needed
-                p.EditPerson(personId, name, telephone, email, role); // Edit person details
-                p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
+        private void adminLb_Click(object sender, EventArgs e)
+        {
 
-                this.PersonDGV.DataSource = p.GetTeachers();
+        }
 
-                MessageBox.Show("Teacher edited successfully");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Occurred: " + ex.Message);
-            }
-        }*/
+        private void worhoutb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editIDtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void editTeacherBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                int personId = Convert.ToInt32(editIDtb.Text);
+                // Check if editIDtb is empty or contains non-numeric characters
+                if (string.IsNullOrWhiteSpace(editIDtb.Text) || !int.TryParse(editIDtb.Text, out int personId))
+                {
+                    MessageBox.Show("Please enter a valid PersonId.");
+                    return;
+                }
+
                 string name = isNameChanged ? nameTB.Text : null;
                 string telephone = isTelephoneChanged ? telephoneTB.Text : null;
                 string email = isEmailChanged ? emailTB.Text : null;
@@ -396,24 +440,17 @@ namespace CW
                 string subject1 = isSubject1Changed ? subject1TB.Text : null;
                 string subject2 = isSubject2Changed ? subject2TB.Text : null;
 
-                // Check if at least one field is provided for updating
-                if (name == null && telephone == null && email == null && role == null)
-                {
-                    MessageBox.Show("No fields to update for person.");
-                    return;
-                }
-
                 PersonBLL p = new PersonBLL();
                 p.EditPerson(personId, name, telephone, email, role); // Edit person details
 
-                // Check if at least one field is provided for updating teacher
-                if (salary == null && subject1 == null && subject2 == null)
+                p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
+
+                // Check if at least one field is provided for updating
+                if (name == null && telephone == null && email == null && role == null && salary == null && subject1 == null && subject2 == null)
                 {
-                    MessageBox.Show("No fields to update for teacher.");
+                    MessageBox.Show("No fields to update.");
                     return;
                 }
-
-                p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
 
                 this.PersonDGV.DataSource = p.GetTeachers();
 
@@ -423,66 +460,84 @@ namespace CW
             {
                 MessageBox.Show("Error Occurred: " + ex.Message);
             }
-        }
-
-
-
-
-
-
-        private void ViewTeacherBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PersonBLL p = new PersonBLL();
-                this.PersonDGV.DataSource = p.GetTeachers();
-            }
-            catch
-            {
-                MessageBox.Show("Error Occurred");
-            }
-        }
-
-        private void label40_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void editAdminBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                int personId = Convert.ToInt32(editIDtb.Text);
+                // Check if editIdAdminTb is empty or contains non-numeric characters
+                if (string.IsNullOrWhiteSpace(editIdAdminTb.Text) || !int.TryParse(editIdAdminTb.Text, out int personId))
+                {
+                    MessageBox.Show("Please enter a valid PersonId.");
+                    return;
+                }
+
                 string name = isNameChanged ? nameTB.Text : null;
                 string telephone = isTelephoneChanged ? telephoneTB.Text : null;
                 string email = isEmailChanged ? emailTB.Text : null;
-                string role = isRoleChanged ? teacherLb.Text : null;
-                decimal? salary = isSalaryChanged ? (decimal?)Convert.ToDecimal(salaryTB.Text) : null;
-                string employmenttype = isSubject1Changed ? emptyptb.Text : null;
-                string workinghours = isSubject2Changed ? worhoutb.Text : null;
-
-                // Check if at least one field is provided for updating
-                if (name == null && telephone == null && email == null && role == null)
-                {
-                    MessageBox.Show("No fields to update for person.");
-                    return;
-                }
+                string role = isRoleChanged ? adminLb.Text : null;
+                decimal? salary = isSalaryAChanged ? (decimal?)Convert.ToDecimal(salaryAtb.Text) : null;
+                string employmenttype = isEmploymentTypeChanged ? emptyptb.Text : null;
+                decimal? workinghours = isWorkingHoursChanged ? (decimal?)Convert.ToDecimal(worhoutb.Text) : null;
 
                 PersonBLL p = new PersonBLL();
                 p.EditPerson(personId, name, telephone, email, role); // Edit person details
 
-                // Check if at least one field is provided for updating teacher
-                if (salary == null && subject1 == null && subject2 == null)
+                p.EditAdmin(personId, salary, employmenttype, workinghours); // Edit Admin details
+
+                // Check if at least one field is provided for updating
+                if (name == null && telephone == null && email == null && role == null && salary == null && employmenttype == null && workinghours == null)
                 {
-                    MessageBox.Show("No fields to update for teacher.");
+                    MessageBox.Show("No fields to update.");
                     return;
                 }
 
-                p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
+                this.PersonDGV.DataSource = p.GetAdmins();
 
-                this.PersonDGV.DataSource = p.GetTeachers();
+                MessageBox.Show("Admin edited successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occurred: " + ex.Message);
+            }
+        }
 
-                MessageBox.Show("Teacher edited successfully");
+        private void editStudentBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check if editStuIdTb is empty or contains non-numeric characters
+                if (string.IsNullOrWhiteSpace(editStuIdTb.Text) || !int.TryParse(editStuIdTb.Text, out int personId))
+                {
+                    MessageBox.Show("Please enter a valid PersonId.");
+                    return;
+                }
+
+                string name = isNameChanged ? nameTB.Text : null;
+                string telephone = isTelephoneChanged ? telephoneTB.Text : null;
+                string email = isEmailChanged ? emailTB.Text : null;
+                string role = isRoleChanged ? stulb.Text : null;
+                string currentsubject1 = isCurrentSubject1Changed ? currentsubject1tb.Text : null;
+                string currentsubject2 = isCurrentSubject2Changed ? currentsubject2tb.Text : null;
+                string previoussubject1 = isPreviousSubject1Changed ? previoussubject1tb.Text : null;
+                string previoussubject2 = isPreviousSubject2Changed ? previoussubject2tb.Text : null;
+
+                PersonBLL p = new PersonBLL();
+                p.EditPerson(personId, name, telephone, email, role); // Edit person details
+
+                p.EditStudent(personId, currentsubject1, currentsubject2, previoussubject1, previoussubject2); // Edit Student details
+
+                // Check if at least one field is provided for updating
+                if (name == null && telephone == null && email == null && role == null && currentsubject1 == null && currentsubject2 == null && previoussubject1 == null && previoussubject2 == null)
+                {
+                    MessageBox.Show("No fields to update.");
+                    return;
+                }
+
+                this.PersonDGV.DataSource = p.GetStudents();
+
+                MessageBox.Show("Student edited successfully");
             }
             catch (Exception ex)
             {
