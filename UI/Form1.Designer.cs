@@ -126,6 +126,8 @@ namespace CW
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.label13 = new System.Windows.Forms.Label();
             this.deleteTb = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -603,35 +605,35 @@ namespace CW
             // 
             // LoadDataInfoBtn
             // 
-            this.LoadDataInfoBtn.Location = new System.Drawing.Point(430, 21);
+            this.LoadDataInfoBtn.Location = new System.Drawing.Point(229, 157);
             this.LoadDataInfoBtn.Name = "LoadDataInfoBtn";
-            this.LoadDataInfoBtn.Size = new System.Drawing.Size(189, 30);
+            this.LoadDataInfoBtn.Size = new System.Drawing.Size(176, 50);
             this.LoadDataInfoBtn.TabIndex = 54;
-            this.LoadDataInfoBtn.Text = "Search by ID or Name";
+            this.LoadDataInfoBtn.Text = "Search";
             this.LoadDataInfoBtn.UseVisualStyleBackColor = true;
             this.LoadDataInfoBtn.Click += new System.EventHandler(this.LoadDataInfoBtn_Click);
             // 
             // LoadDataInfoTxtBox
             // 
-            this.LoadDataInfoTxtBox.Location = new System.Drawing.Point(290, 24);
+            this.LoadDataInfoTxtBox.Location = new System.Drawing.Point(328, 224);
             this.LoadDataInfoTxtBox.Name = "LoadDataInfoTxtBox";
-            this.LoadDataInfoTxtBox.Size = new System.Drawing.Size(106, 22);
+            this.LoadDataInfoTxtBox.Size = new System.Drawing.Size(77, 22);
             this.LoadDataInfoTxtBox.TabIndex = 53;
             // 
             // PersonDGV
             // 
             this.PersonDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PersonDGV.Location = new System.Drawing.Point(26, 60);
+            this.PersonDGV.Location = new System.Drawing.Point(21, 373);
             this.PersonDGV.Name = "PersonDGV";
             this.PersonDGV.RowHeadersWidth = 51;
-            this.PersonDGV.Size = new System.Drawing.Size(1518, 309);
+            this.PersonDGV.Size = new System.Drawing.Size(1585, 492);
             this.PersonDGV.TabIndex = 52;
             // 
             // ViewAllDataBtn
             // 
-            this.ViewAllDataBtn.Location = new System.Drawing.Point(41, 20);
+            this.ViewAllDataBtn.Location = new System.Drawing.Point(26, 157);
             this.ViewAllDataBtn.Name = "ViewAllDataBtn";
-            this.ViewAllDataBtn.Size = new System.Drawing.Size(141, 33);
+            this.ViewAllDataBtn.Size = new System.Drawing.Size(132, 50);
             this.ViewAllDataBtn.TabIndex = 55;
             this.ViewAllDataBtn.Text = "View All Data";
             this.ViewAllDataBtn.UseVisualStyleBackColor = true;
@@ -639,9 +641,9 @@ namespace CW
             // 
             // ViewTeacherBtn
             // 
-            this.ViewTeacherBtn.Location = new System.Drawing.Point(670, 30);
+            this.ViewTeacherBtn.Location = new System.Drawing.Point(26, 213);
             this.ViewTeacherBtn.Name = "ViewTeacherBtn";
-            this.ViewTeacherBtn.Size = new System.Drawing.Size(127, 23);
+            this.ViewTeacherBtn.Size = new System.Drawing.Size(132, 41);
             this.ViewTeacherBtn.TabIndex = 57;
             this.ViewTeacherBtn.Text = "View Teacher";
             this.ViewTeacherBtn.UseVisualStyleBackColor = true;
@@ -649,9 +651,9 @@ namespace CW
             // 
             // ViewAdminBtn
             // 
-            this.ViewAdminBtn.Location = new System.Drawing.Point(803, 30);
+            this.ViewAdminBtn.Location = new System.Drawing.Point(26, 260);
             this.ViewAdminBtn.Name = "ViewAdminBtn";
-            this.ViewAdminBtn.Size = new System.Drawing.Size(127, 23);
+            this.ViewAdminBtn.Size = new System.Drawing.Size(132, 41);
             this.ViewAdminBtn.TabIndex = 58;
             this.ViewAdminBtn.Text = "View Admin";
             this.ViewAdminBtn.UseVisualStyleBackColor = true;
@@ -659,9 +661,9 @@ namespace CW
             // 
             // ViewStudentBtn
             // 
-            this.ViewStudentBtn.Location = new System.Drawing.Point(936, 30);
+            this.ViewStudentBtn.Location = new System.Drawing.Point(26, 307);
             this.ViewStudentBtn.Name = "ViewStudentBtn";
-            this.ViewStudentBtn.Size = new System.Drawing.Size(127, 23);
+            this.ViewStudentBtn.Size = new System.Drawing.Size(132, 41);
             this.ViewStudentBtn.TabIndex = 59;
             this.ViewStudentBtn.Text = "View Student";
             this.ViewStudentBtn.UseVisualStyleBackColor = true;
@@ -669,7 +671,7 @@ namespace CW
             // 
             // tabPage8
             // 
-            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tabPage8.Controls.Add(this.label12);
             this.tabPage8.Controls.Add(this.editStuIdTb);
             this.tabPage8.Controls.Add(this.editStudentBtn);
@@ -694,7 +696,7 @@ namespace CW
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(364, 26);
+            this.label12.Location = new System.Drawing.Point(352, 24);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 16);
             this.label12.TabIndex = 59;
@@ -702,14 +704,14 @@ namespace CW
             // 
             // editStuIdTb
             // 
-            this.editStuIdTb.Location = new System.Drawing.Point(448, 23);
+            this.editStuIdTb.Location = new System.Drawing.Point(436, 21);
             this.editStuIdTb.Name = "editStuIdTb";
-            this.editStuIdTb.Size = new System.Drawing.Size(75, 22);
+            this.editStuIdTb.Size = new System.Drawing.Size(93, 22);
             this.editStuIdTb.TabIndex = 58;
             // 
             // editStudentBtn
             // 
-            this.editStudentBtn.Location = new System.Drawing.Point(461, 67);
+            this.editStudentBtn.Location = new System.Drawing.Point(449, 65);
             this.editStudentBtn.Name = "editStudentBtn";
             this.editStudentBtn.Size = new System.Drawing.Size(120, 38);
             this.editStudentBtn.TabIndex = 57;
@@ -728,7 +730,7 @@ namespace CW
             // 
             // addStudentBtn
             // 
-            this.addStudentBtn.Location = new System.Drawing.Point(314, 67);
+            this.addStudentBtn.Location = new System.Drawing.Point(302, 65);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(120, 38);
             this.addStudentBtn.TabIndex = 55;
@@ -811,6 +813,7 @@ namespace CW
             // 
             // tabPage7
             // 
+            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabPage7.Controls.Add(this.label40);
             this.tabPage7.Controls.Add(this.editIdAdminTb);
             this.tabPage7.Controls.Add(this.editAdminBtn);
@@ -829,7 +832,6 @@ namespace CW
             this.tabPage7.Size = new System.Drawing.Size(595, 256);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Admin";
-            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // label40
             // 
@@ -936,6 +938,7 @@ namespace CW
             // 
             // tabPage6
             // 
+            this.tabPage6.BackColor = System.Drawing.Color.PowderBlue;
             this.tabPage6.Controls.Add(this.edit);
             this.tabPage6.Controls.Add(this.editIDtb);
             this.tabPage6.Controls.Add(this.teacherLb);
@@ -954,13 +957,12 @@ namespace CW
             this.tabPage6.Size = new System.Drawing.Size(595, 256);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Teacher";
-            this.tabPage6.UseVisualStyleBackColor = true;
             this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
             // 
             // edit
             // 
             this.edit.AutoSize = true;
-            this.edit.Location = new System.Drawing.Point(320, 41);
+            this.edit.Location = new System.Drawing.Point(310, 36);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(67, 16);
             this.edit.TabIndex = 49;
@@ -969,7 +971,7 @@ namespace CW
             // 
             // editIDtb
             // 
-            this.editIDtb.Location = new System.Drawing.Point(417, 35);
+            this.editIDtb.Location = new System.Drawing.Point(391, 31);
             this.editIDtb.Name = "editIDtb";
             this.editIDtb.Size = new System.Drawing.Size(116, 22);
             this.editIDtb.TabIndex = 48;
@@ -1016,7 +1018,7 @@ namespace CW
             // 
             // editTeacherBtn
             // 
-            this.editTeacherBtn.Location = new System.Drawing.Point(443, 75);
+            this.editTeacherBtn.Location = new System.Drawing.Point(413, 67);
             this.editTeacherBtn.Name = "editTeacherBtn";
             this.editTeacherBtn.Size = new System.Drawing.Size(121, 38);
             this.editTeacherBtn.TabIndex = 47;
@@ -1026,7 +1028,7 @@ namespace CW
             // 
             // AddTeacherBtn
             // 
-            this.AddTeacherBtn.Location = new System.Drawing.Point(294, 75);
+            this.AddTeacherBtn.Location = new System.Drawing.Point(264, 67);
             this.AddTeacherBtn.Name = "AddTeacherBtn";
             this.AddTeacherBtn.Size = new System.Drawing.Size(121, 38);
             this.AddTeacherBtn.TabIndex = 44;
@@ -1063,9 +1065,9 @@ namespace CW
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(980, 435);
+            this.deleteBtn.Location = new System.Drawing.Point(229, 276);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(121, 38);
+            this.deleteBtn.Size = new System.Drawing.Size(176, 38);
             this.deleteBtn.TabIndex = 50;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -1073,29 +1075,29 @@ namespace CW
             // 
             // telephoneTB
             // 
-            this.telephoneTB.Location = new System.Drawing.Point(342, 400);
+            this.telephoneTB.Location = new System.Drawing.Point(763, 20);
             this.telephoneTB.Name = "telephoneTB";
-            this.telephoneTB.Size = new System.Drawing.Size(100, 22);
+            this.telephoneTB.Size = new System.Drawing.Size(121, 22);
             this.telephoneTB.TabIndex = 31;
             // 
             // nameTB
             // 
-            this.nameTB.Location = new System.Drawing.Point(122, 400);
+            this.nameTB.Location = new System.Drawing.Point(504, 17);
             this.nameTB.Name = "nameTB";
-            this.nameTB.Size = new System.Drawing.Size(100, 22);
+            this.nameTB.Size = new System.Drawing.Size(159, 22);
             this.nameTB.TabIndex = 29;
             // 
             // emailTB
             // 
-            this.emailTB.Location = new System.Drawing.Point(598, 403);
+            this.emailTB.Location = new System.Drawing.Point(973, 20);
             this.emailTB.Name = "emailTB";
-            this.emailTB.Size = new System.Drawing.Size(100, 22);
+            this.emailTB.Size = new System.Drawing.Size(263, 22);
             this.emailTB.TabIndex = 33;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 403);
+            this.label8.Location = new System.Drawing.Point(448, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 16);
             this.label8.TabIndex = 30;
@@ -1104,7 +1106,7 @@ namespace CW
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(251, 403);
+            this.label7.Location = new System.Drawing.Point(685, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 16);
             this.label7.TabIndex = 32;
@@ -1113,7 +1115,7 @@ namespace CW
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(507, 406);
+            this.label6.Location = new System.Drawing.Point(920, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 34;
@@ -1124,7 +1126,7 @@ namespace CW
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Location = new System.Drawing.Point(34, 450);
+            this.tabControl2.Location = new System.Drawing.Point(451, 67);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(603, 285);
@@ -1133,7 +1135,7 @@ namespace CW
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(977, 498);
+            this.label13.Location = new System.Drawing.Point(232, 333);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 16);
             this.label13.TabIndex = 62;
@@ -1141,16 +1143,46 @@ namespace CW
             // 
             // deleteTb
             // 
-            this.deleteTb.Location = new System.Drawing.Point(1050, 495);
+            this.deleteTb.Location = new System.Drawing.Point(328, 330);
             this.deleteTb.Name = "deleteTb";
-            this.deleteTb.Size = new System.Drawing.Size(84, 22);
+            this.deleteTb.Size = new System.Drawing.Size(77, 22);
             this.deleteTb.TabIndex = 61;
+            // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Items.AddRange(new object[] {
+            "\tMain Menu:",
+            "  1. Add new data",
+            "  2. View all existing data",
+            "  3. View existing data by user group",
+            "  4. Edit existing data",
+            "  5. Delete existing data"});
+            this.listBox1.Location = new System.Drawing.Point(21, 20);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(237, 116);
+            this.listBox1.TabIndex = 63;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(231, 227);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(81, 16);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "ID or Name :";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1781, 877);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.deleteTb);
             this.Controls.Add(this.deleteBtn);
@@ -1304,5 +1336,7 @@ namespace CW
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox deleteTb;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label14;
     }
 }
