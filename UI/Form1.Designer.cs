@@ -1185,9 +1185,9 @@ namespace CW
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(262, 274);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 32);
+            this.label14.Size = new System.Drawing.Size(65, 32);
             this.label14.TabIndex = 64;
-            this.label14.Text = "PersonId \r\n/ Name :";
+            this.label14.Text = "PersonId \r\nor Name :";
             // 
             // button5
             // 

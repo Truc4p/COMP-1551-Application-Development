@@ -444,7 +444,6 @@ namespace CW
             }
         }
 
-
         public void CreateAdmin(int personId, decimal salary, string employmenttype, decimal workinghours)
         {
             con.ConnectionString = ConString;
@@ -526,42 +525,26 @@ namespace CW
 
         public class Person
         {
-            public string Name { get; private set; }
+            public int PersonId { get; set; }
+            public string Name { get; set; }
             public string Telephone { get; set; }
-
             public string Email { get; set; }
             public string Role { get; set; }
-
-            public virtual void DisplayInfo()
-            {
-                Console.WriteLine($"Name: {Name}, Telephone: {Telephone}, Email: {Email}, Role: {Role}");
-            }
         }
 
         public class Teacher : Person
         {
-            public float Salary { get; set; }
+            public decimal Salary { get; set; }
             public string Subject1 { get; set; }
             public string Subject2 { get; set; }
-
-            public override void DisplayInfo()
-            {
-                base.DisplayInfo();
-                Console.WriteLine($"Salary: {Salary}, Subject1: {Subject1}, Subject2: {Subject2}");
-            }
         }
+
 
         public class Admin : Person
         {
-            public float Salary { get; set; }
+            public decimal Salary { get; set; }
             public string EmploymentType { get; set; }
-            public int WorkingHours { get; set; }
-
-            public override void DisplayInfo()
-            {
-                base.DisplayInfo();
-                Console.WriteLine($"Salary: {Salary}, EmploymentType: {EmploymentType}, WorkingHours: {WorkingHours}");
-            }
+            public decimal WorkingHours { get; set; }
         }
 
         public class Student : Person
@@ -570,12 +553,6 @@ namespace CW
             public string CurrentSubject2 { get; set; }
             public string PreviousSubject1 { get; set; }
             public string PreviousSubject2 { get; set; }
-
-            public override void DisplayInfo()
-            {
-                base.DisplayInfo();
-                Console.WriteLine($"CurrentSubject1: {CurrentSubject1}, CurrentSubject2: {CurrentSubject2}, PreviousSubject1: {PreviousSubject1}, PreviousSubject2: {PreviousSubject2}");
-            }
         }
     }
 }

@@ -92,7 +92,6 @@ namespace CW
             {
                 PersonBLL p = new PersonBLL();
                 this.PersonDGV.DataSource = p.GetPersons();
-
             }
             catch
             {
@@ -196,8 +195,6 @@ namespace CW
             }
         }
 
-        
-
         private void AddTeacherBtn_Click(object sender, EventArgs e)
         {
             try
@@ -223,7 +220,8 @@ namespace CW
                 MessageBox.Show("Error Occurred: " + ex.Message);
             }
         }
-        
+
+
         private void AddAdminBtn_Click(object sender, EventArgs e)
         {
             try
@@ -277,19 +275,6 @@ namespace CW
             }
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PersonBLL p = new PersonBLL();
-                this.PersonDGV.DataSource = p.GetPersons();
-            }
-            catch
-            {
-                MessageBox.Show("Error Occurred");
-            }
-        }
-
         private void editTeacherBtn_Click(object sender, EventArgs e)
         {
             try
@@ -305,7 +290,8 @@ namespace CW
                 string telephone = isTelephoneChanged ? telephoneTB.Text : null;
                 string email = isEmailChanged ? emailTB.Text : null;
                 string role = isRoleChanged ? teacherLb.Text : null;
-                decimal? salary = isSalaryChanged ? (decimal?)Convert.ToDecimal(salaryTB.Text) : null;
+                decimal salary = Convert.ToDecimal(salaryTB.Text);
+                //decimal? salary = isSalaryChanged ? (decimal?)Convert.ToDecimal(salaryTB.Text) : null;
                 string subject1 = isSubject1Changed ? subject1TB.Text : null;
                 string subject2 = isSubject2Changed ? subject2TB.Text : null;
 
@@ -315,6 +301,8 @@ namespace CW
                 p.EditTeacher(personId, salary, subject1, subject2); // Edit teacher details
 
                 // Check if at least one field is provided for updating
+                //if (!isNameChanged && !isTelephoneChanged && !isEmailChanged && !isRoleChanged && !isSalaryChanged && !isSubject1Changed && !isSubject2Changed)
+
                 if (name == null && telephone == null && email == null && role == null && salary == null && subject1 == null && subject2 == null)
                 {
                     MessageBox.Show("No fields to update.");
@@ -346,9 +334,11 @@ namespace CW
                 string telephone = isTelephoneChanged ? telephoneTB.Text : null;
                 string email = isEmailChanged ? emailTB.Text : null;
                 string role = isRoleChanged ? adminLb.Text : null;
-                decimal? salary = isSalaryAChanged ? (decimal?)Convert.ToDecimal(salaryAtb.Text) : null;
+                decimal salary = Convert.ToDecimal(salaryTB.Text);
+                //decimal? salary = isSalaryAChanged ? (decimal?)Convert.ToDecimal(salaryAtb.Text) : null;
                 string employmenttype = isEmploymentTypeChanged ? emptyptb.Text : null;
-                decimal? workinghours = isWorkingHoursChanged ? (decimal?)Convert.ToDecimal(worhoutb.Text) : null;
+                decimal workinghours = Convert.ToDecimal(worhoutb.Text);
+                //decimal? workinghours = isWorkingHoursChanged ? (decimal?)Convert.ToDecimal(worhoutb.Text) : null;
 
                 PersonBLL p = new PersonBLL();
                 p.EditPerson(personId, name, telephone, email, role); // Edit person details
@@ -413,7 +403,6 @@ namespace CW
                 MessageBox.Show("Error Occurred: " + ex.Message);
             }
         }
-
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             try
