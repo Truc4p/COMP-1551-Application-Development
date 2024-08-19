@@ -530,6 +530,22 @@ namespace CW
             public string Telephone { get; set; }
             public string Email { get; set; }
             public string Role { get; set; }
+<<<<<<< HEAD
+=======
+
+            public Person(string name, string telephone, string email, string role)
+            {
+                Name = name;
+                Telephone = telephone;
+                Email = email;
+                Role = role;
+            }
+
+            public virtual void DisplayInfo()
+            {
+                Console.WriteLine($"Name: {Name}, Telephone: {Telephone}, Email: {Email}, Role: {Role}");
+            }
+>>>>>>> 4e3f22197cb406d97906529cc56babfbfe9327cb
         }
 
         public class Teacher : Person
@@ -537,6 +553,23 @@ namespace CW
             public decimal Salary { get; set; }
             public string Subject1 { get; set; }
             public string Subject2 { get; set; }
+<<<<<<< HEAD
+=======
+
+            public Teacher(string name, string telephone, string email, float salary, string subject1, string subject2)
+                : base(name, telephone, email, "Teacher")
+            {
+                Salary = salary;
+                Subject1 = subject1;
+                Subject2 = subject2;
+            }
+
+            public override void DisplayInfo()
+            {
+                base.DisplayInfo();
+                Console.WriteLine($"Salary: {Salary}, Subject1: {Subject1}, Subject2: {Subject2}");
+            }
+>>>>>>> 4e3f22197cb406d97906529cc56babfbfe9327cb
         }
 
 
@@ -544,7 +577,25 @@ namespace CW
         {
             public decimal Salary { get; set; }
             public string EmploymentType { get; set; }
+<<<<<<< HEAD
             public decimal WorkingHours { get; set; }
+=======
+            public int WorkingHours { get; set; }
+
+            public Admin(string name, string telephone, string email, float salary, string employmentType, int workingHours)
+                : base(name, telephone, email, "Admin")
+            {
+                Salary = salary;
+                EmploymentType = employmentType;
+                WorkingHours = workingHours;
+            }
+
+            public override void DisplayInfo()
+            {
+                base.DisplayInfo();
+                Console.WriteLine($"Salary: {Salary}, EmploymentType: {EmploymentType}, WorkingHours: {WorkingHours}");
+            }
+>>>>>>> 4e3f22197cb406d97906529cc56babfbfe9327cb
         }
 
         public class Student : Person
@@ -553,6 +604,25 @@ namespace CW
             public string CurrentSubject2 { get; set; }
             public string PreviousSubject1 { get; set; }
             public string PreviousSubject2 { get; set; }
+<<<<<<< HEAD
+=======
+
+            public Student(string name, string telephone, string email, string currentSubject1, string currentSubject2, string previousSubject1, string previousSubject2)
+                : base(name, telephone, email, "Student")
+            {
+                CurrentSubject1 = currentSubject1;
+                CurrentSubject2 = currentSubject2;
+                PreviousSubject1 = previousSubject1;
+                PreviousSubject2 = previousSubject2;
+            }
+
+            public override void DisplayInfo()
+            {
+                base.DisplayInfo();
+                Console.WriteLine($"CurrentSubject1: {CurrentSubject1}, CurrentSubject2: {CurrentSubject2}, PreviousSubject1: {PreviousSubject1}, PreviousSubject2: {PreviousSubject2}");
+            }
+>>>>>>> 4e3f22197cb406d97906529cc56babfbfe9327cb
         }
     }
 }
+
