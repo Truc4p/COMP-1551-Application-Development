@@ -528,9 +528,16 @@ namespace CW
         {
             public string Name { get; private set; }
             public string Telephone { get; set; }
-
             public string Email { get; set; }
             public string Role { get; set; }
+
+            public Person(string name, string telephone, string email, string role)
+            {
+                Name = name;
+                Telephone = telephone;
+                Email = email;
+                Role = role;
+            }
 
             public virtual void DisplayInfo()
             {
@@ -544,6 +551,14 @@ namespace CW
             public string Subject1 { get; set; }
             public string Subject2 { get; set; }
 
+            public Teacher(string name, string telephone, string email, float salary, string subject1, string subject2)
+                : base(name, telephone, email, "Teacher")
+            {
+                Salary = salary;
+                Subject1 = subject1;
+                Subject2 = subject2;
+            }
+
             public override void DisplayInfo()
             {
                 base.DisplayInfo();
@@ -556,6 +571,14 @@ namespace CW
             public float Salary { get; set; }
             public string EmploymentType { get; set; }
             public int WorkingHours { get; set; }
+
+            public Admin(string name, string telephone, string email, float salary, string employmentType, int workingHours)
+                : base(name, telephone, email, "Admin")
+            {
+                Salary = salary;
+                EmploymentType = employmentType;
+                WorkingHours = workingHours;
+            }
 
             public override void DisplayInfo()
             {
@@ -571,6 +594,15 @@ namespace CW
             public string PreviousSubject1 { get; set; }
             public string PreviousSubject2 { get; set; }
 
+            public Student(string name, string telephone, string email, string currentSubject1, string currentSubject2, string previousSubject1, string previousSubject2)
+                : base(name, telephone, email, "Student")
+            {
+                CurrentSubject1 = currentSubject1;
+                CurrentSubject2 = currentSubject2;
+                PreviousSubject1 = previousSubject1;
+                PreviousSubject2 = previousSubject2;
+            }
+
             public override void DisplayInfo()
             {
                 base.DisplayInfo();
@@ -579,3 +611,4 @@ namespace CW
         }
     }
 }
+

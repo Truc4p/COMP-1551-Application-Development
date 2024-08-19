@@ -92,7 +92,6 @@ namespace CW
             {
                 PersonBLL p = new PersonBLL();
                 this.PersonDGV.DataSource = p.GetPersons();
-
             }
             catch
             {
@@ -196,8 +195,6 @@ namespace CW
             }
         }
 
-        
-
         private void AddTeacherBtn_Click(object sender, EventArgs e)
         {
             try
@@ -274,19 +271,6 @@ namespace CW
             catch (Exception ex)
             {
                 MessageBox.Show("Error Occurred: " + ex.Message);
-            }
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PersonBLL p = new PersonBLL();
-                this.PersonDGV.DataSource = p.GetPersons();
-            }
-            catch
-            {
-                MessageBox.Show("Error Occurred");
             }
         }
 
@@ -413,7 +397,6 @@ namespace CW
                 MessageBox.Show("Error Occurred: " + ex.Message);
             }
         }
-
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             try
