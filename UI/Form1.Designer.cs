@@ -128,6 +128,7 @@ namespace CW
             this.deleteTb = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -606,7 +607,7 @@ namespace CW
             // LoadDataInfoBtn
             // 
             this.LoadDataInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.LoadDataInfoBtn.Location = new System.Drawing.Point(229, 157);
+            this.LoadDataInfoBtn.Location = new System.Drawing.Point(259, 212);
             this.LoadDataInfoBtn.Name = "LoadDataInfoBtn";
             this.LoadDataInfoBtn.Size = new System.Drawing.Size(256, 50);
             this.LoadDataInfoBtn.TabIndex = 54;
@@ -616,7 +617,7 @@ namespace CW
             // 
             // LoadDataInfoTxtBox
             // 
-            this.LoadDataInfoTxtBox.Location = new System.Drawing.Point(314, 224);
+            this.LoadDataInfoTxtBox.Location = new System.Drawing.Point(344, 279);
             this.LoadDataInfoTxtBox.Name = "LoadDataInfoTxtBox";
             this.LoadDataInfoTxtBox.Size = new System.Drawing.Size(171, 22);
             this.LoadDataInfoTxtBox.TabIndex = 53;
@@ -624,16 +625,16 @@ namespace CW
             // PersonDGV
             // 
             this.PersonDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PersonDGV.Location = new System.Drawing.Point(21, 373);
+            this.PersonDGV.Location = new System.Drawing.Point(26, 422);
             this.PersonDGV.Name = "PersonDGV";
             this.PersonDGV.RowHeadersWidth = 51;
-            this.PersonDGV.Size = new System.Drawing.Size(1585, 492);
+            this.PersonDGV.Size = new System.Drawing.Size(1585, 443);
             this.PersonDGV.TabIndex = 52;
             // 
             // ViewAllDataBtn
             // 
             this.ViewAllDataBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ViewAllDataBtn.Location = new System.Drawing.Point(26, 157);
+            this.ViewAllDataBtn.Location = new System.Drawing.Point(56, 212);
             this.ViewAllDataBtn.Name = "ViewAllDataBtn";
             this.ViewAllDataBtn.Size = new System.Drawing.Size(178, 50);
             this.ViewAllDataBtn.TabIndex = 55;
@@ -644,7 +645,7 @@ namespace CW
             // ViewTeacherBtn
             // 
             this.ViewTeacherBtn.BackColor = System.Drawing.Color.LightCyan;
-            this.ViewTeacherBtn.Location = new System.Drawing.Point(26, 213);
+            this.ViewTeacherBtn.Location = new System.Drawing.Point(56, 268);
             this.ViewTeacherBtn.Name = "ViewTeacherBtn";
             this.ViewTeacherBtn.Size = new System.Drawing.Size(178, 41);
             this.ViewTeacherBtn.TabIndex = 57;
@@ -655,7 +656,7 @@ namespace CW
             // ViewAdminBtn
             // 
             this.ViewAdminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ViewAdminBtn.Location = new System.Drawing.Point(26, 260);
+            this.ViewAdminBtn.Location = new System.Drawing.Point(56, 315);
             this.ViewAdminBtn.Name = "ViewAdminBtn";
             this.ViewAdminBtn.Size = new System.Drawing.Size(178, 41);
             this.ViewAdminBtn.TabIndex = 58;
@@ -666,7 +667,7 @@ namespace CW
             // ViewStudentBtn
             // 
             this.ViewStudentBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ViewStudentBtn.Location = new System.Drawing.Point(26, 307);
+            this.ViewStudentBtn.Location = new System.Drawing.Point(56, 362);
             this.ViewStudentBtn.Name = "ViewStudentBtn";
             this.ViewStudentBtn.Size = new System.Drawing.Size(178, 41);
             this.ViewStudentBtn.TabIndex = 59;
@@ -676,7 +677,7 @@ namespace CW
             // 
             // tabPage8
             // 
-            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage8.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage8.Controls.Add(this.label12);
             this.tabPage8.Controls.Add(this.editStuIdTb);
             this.tabPage8.Controls.Add(this.editStudentBtn);
@@ -694,7 +695,7 @@ namespace CW
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(595, 256);
+            this.tabPage8.Size = new System.Drawing.Size(508, 256);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Student";
             this.tabPage8.Click += new System.EventHandler(this.tabPage8_Click);
@@ -702,7 +703,7 @@ namespace CW
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(379, 197);
+            this.label12.Location = new System.Drawing.Point(314, 180);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 16);
             this.label12.TabIndex = 59;
@@ -710,19 +711,20 @@ namespace CW
             // 
             // editStuIdTb
             // 
-            this.editStuIdTb.Location = new System.Drawing.Point(463, 194);
+            this.editStuIdTb.Location = new System.Drawing.Point(398, 177);
             this.editStuIdTb.Name = "editStuIdTb";
             this.editStuIdTb.Size = new System.Drawing.Size(93, 22);
             this.editStuIdTb.TabIndex = 58;
             // 
             // editStudentBtn
             // 
-            this.editStudentBtn.Location = new System.Drawing.Point(382, 141);
+            this.editStudentBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.editStudentBtn.Location = new System.Drawing.Point(317, 124);
             this.editStudentBtn.Name = "editStudentBtn";
             this.editStudentBtn.Size = new System.Drawing.Size(174, 38);
             this.editStudentBtn.TabIndex = 57;
             this.editStudentBtn.Text = "Edit Student";
-            this.editStudentBtn.UseVisualStyleBackColor = true;
+            this.editStudentBtn.UseVisualStyleBackColor = false;
             this.editStudentBtn.Click += new System.EventHandler(this.editStudentBtn_Click);
             // 
             // stulb
@@ -736,12 +738,13 @@ namespace CW
             // 
             // addStudentBtn
             // 
-            this.addStudentBtn.Location = new System.Drawing.Point(297, 22);
+            this.addStudentBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.addStudentBtn.Location = new System.Drawing.Point(317, 50);
             this.addStudentBtn.Name = "addStudentBtn";
-            this.addStudentBtn.Size = new System.Drawing.Size(120, 38);
+            this.addStudentBtn.Size = new System.Drawing.Size(174, 38);
             this.addStudentBtn.TabIndex = 55;
             this.addStudentBtn.Text = "Add Student";
-            this.addStudentBtn.UseVisualStyleBackColor = true;
+            this.addStudentBtn.UseVisualStyleBackColor = false;
             this.addStudentBtn.Click += new System.EventHandler(this.addStudentBtn_Click);
             // 
             // previoussubject2tb
@@ -819,7 +822,7 @@ namespace CW
             // 
             // tabPage7
             // 
-            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage7.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage7.Controls.Add(this.label40);
             this.tabPage7.Controls.Add(this.editIdAdminTb);
             this.tabPage7.Controls.Add(this.editAdminBtn);
@@ -835,14 +838,14 @@ namespace CW
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(595, 256);
+            this.tabPage7.Size = new System.Drawing.Size(508, 256);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Admin";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(384, 211);
+            this.label40.Location = new System.Drawing.Point(295, 174);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(67, 16);
             this.label40.TabIndex = 57;
@@ -850,29 +853,31 @@ namespace CW
             // 
             // editIdAdminTb
             // 
-            this.editIdAdminTb.Location = new System.Drawing.Point(462, 205);
+            this.editIdAdminTb.Location = new System.Drawing.Point(373, 168);
             this.editIdAdminTb.Name = "editIdAdminTb";
             this.editIdAdminTb.Size = new System.Drawing.Size(98, 22);
             this.editIdAdminTb.TabIndex = 56;
             // 
             // editAdminBtn
             // 
-            this.editAdminBtn.Location = new System.Drawing.Point(387, 153);
+            this.editAdminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.editAdminBtn.Location = new System.Drawing.Point(298, 116);
             this.editAdminBtn.Name = "editAdminBtn";
             this.editAdminBtn.Size = new System.Drawing.Size(173, 38);
             this.editAdminBtn.TabIndex = 55;
             this.editAdminBtn.Text = "Edit Admin";
-            this.editAdminBtn.UseVisualStyleBackColor = true;
+            this.editAdminBtn.UseVisualStyleBackColor = false;
             this.editAdminBtn.Click += new System.EventHandler(this.editAdminBtn_Click);
             // 
             // AddAdminBtn
             // 
-            this.AddAdminBtn.Location = new System.Drawing.Point(287, 34);
+            this.AddAdminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.AddAdminBtn.Location = new System.Drawing.Point(298, 34);
             this.AddAdminBtn.Name = "AddAdminBtn";
-            this.AddAdminBtn.Size = new System.Drawing.Size(121, 38);
+            this.AddAdminBtn.Size = new System.Drawing.Size(173, 38);
             this.AddAdminBtn.TabIndex = 54;
             this.AddAdminBtn.Text = "Add Admin";
-            this.AddAdminBtn.UseVisualStyleBackColor = true;
+            this.AddAdminBtn.UseVisualStyleBackColor = false;
             this.AddAdminBtn.Click += new System.EventHandler(this.AddAdminBtn_Click);
             // 
             // adminLb
@@ -944,7 +949,7 @@ namespace CW
             // 
             // tabPage6
             // 
-            this.tabPage6.BackColor = System.Drawing.Color.LightCyan;
+            this.tabPage6.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage6.Controls.Add(this.edit);
             this.tabPage6.Controls.Add(this.editIDtb);
             this.tabPage6.Controls.Add(this.teacherLb);
@@ -960,7 +965,7 @@ namespace CW
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(595, 256);
+            this.tabPage6.Size = new System.Drawing.Size(508, 256);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Teacher";
             this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
@@ -968,7 +973,7 @@ namespace CW
             // edit
             // 
             this.edit.AutoSize = true;
-            this.edit.Location = new System.Drawing.Point(337, 196);
+            this.edit.Location = new System.Drawing.Point(250, 183);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(67, 16);
             this.edit.TabIndex = 49;
@@ -977,7 +982,7 @@ namespace CW
             // 
             // editIDtb
             // 
-            this.editIDtb.Location = new System.Drawing.Point(418, 191);
+            this.editIDtb.Location = new System.Drawing.Point(331, 178);
             this.editIDtb.Name = "editIDtb";
             this.editIDtb.Size = new System.Drawing.Size(116, 22);
             this.editIDtb.TabIndex = 48;
@@ -1024,22 +1029,24 @@ namespace CW
             // 
             // editTeacherBtn
             // 
-            this.editTeacherBtn.Location = new System.Drawing.Point(340, 134);
+            this.editTeacherBtn.BackColor = System.Drawing.Color.LightCyan;
+            this.editTeacherBtn.Location = new System.Drawing.Point(253, 121);
             this.editTeacherBtn.Name = "editTeacherBtn";
             this.editTeacherBtn.Size = new System.Drawing.Size(194, 38);
             this.editTeacherBtn.TabIndex = 47;
             this.editTeacherBtn.Text = "Edit Teacher";
-            this.editTeacherBtn.UseVisualStyleBackColor = true;
+            this.editTeacherBtn.UseVisualStyleBackColor = false;
             this.editTeacherBtn.Click += new System.EventHandler(this.editTeacherBtn_Click);
             // 
             // AddTeacherBtn
             // 
-            this.AddTeacherBtn.Location = new System.Drawing.Point(246, 35);
+            this.AddTeacherBtn.BackColor = System.Drawing.Color.LightCyan;
+            this.AddTeacherBtn.Location = new System.Drawing.Point(253, 51);
             this.AddTeacherBtn.Name = "AddTeacherBtn";
-            this.AddTeacherBtn.Size = new System.Drawing.Size(121, 38);
+            this.AddTeacherBtn.Size = new System.Drawing.Size(194, 38);
             this.AddTeacherBtn.TabIndex = 44;
             this.AddTeacherBtn.Text = "Add Teacher";
-            this.AddTeacherBtn.UseVisualStyleBackColor = true;
+            this.AddTeacherBtn.UseVisualStyleBackColor = false;
             this.AddTeacherBtn.Click += new System.EventHandler(this.AddTeacherBtn_Click);
             // 
             // label2
@@ -1072,7 +1079,7 @@ namespace CW
             // deleteBtn
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.deleteBtn.Location = new System.Drawing.Point(262, 267);
+            this.deleteBtn.Location = new System.Drawing.Point(292, 322);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(176, 38);
             this.deleteBtn.TabIndex = 50;
@@ -1082,21 +1089,21 @@ namespace CW
             // 
             // telephoneTB
             // 
-            this.telephoneTB.Location = new System.Drawing.Point(834, 20);
+            this.telephoneTB.Location = new System.Drawing.Point(864, 75);
             this.telephoneTB.Name = "telephoneTB";
             this.telephoneTB.Size = new System.Drawing.Size(121, 22);
             this.telephoneTB.TabIndex = 31;
             // 
             // nameTB
             // 
-            this.nameTB.Location = new System.Drawing.Point(575, 17);
+            this.nameTB.Location = new System.Drawing.Point(605, 72);
             this.nameTB.Name = "nameTB";
             this.nameTB.Size = new System.Drawing.Size(159, 22);
             this.nameTB.TabIndex = 29;
             // 
             // emailTB
             // 
-            this.emailTB.Location = new System.Drawing.Point(1044, 20);
+            this.emailTB.Location = new System.Drawing.Point(1074, 75);
             this.emailTB.Name = "emailTB";
             this.emailTB.Size = new System.Drawing.Size(263, 22);
             this.emailTB.TabIndex = 33;
@@ -1104,7 +1111,7 @@ namespace CW
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(519, 20);
+            this.label8.Location = new System.Drawing.Point(549, 75);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 16);
             this.label8.TabIndex = 30;
@@ -1113,7 +1120,7 @@ namespace CW
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(756, 23);
+            this.label7.Location = new System.Drawing.Point(786, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 16);
             this.label7.TabIndex = 32;
@@ -1122,7 +1129,7 @@ namespace CW
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(991, 23);
+            this.label6.Location = new System.Drawing.Point(1021, 78);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 34;
@@ -1133,16 +1140,16 @@ namespace CW
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Location = new System.Drawing.Point(522, 67);
+            this.tabControl2.Location = new System.Drawing.Point(552, 122);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(603, 285);
+            this.tabControl2.Size = new System.Drawing.Size(516, 285);
             this.tabControl2.TabIndex = 60;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(265, 324);
+            this.label13.Location = new System.Drawing.Point(295, 379);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 16);
             this.label13.TabIndex = 62;
@@ -1150,7 +1157,7 @@ namespace CW
             // 
             // deleteTb
             // 
-            this.deleteTb.Location = new System.Drawing.Point(361, 321);
+            this.deleteTb.Location = new System.Drawing.Point(391, 376);
             this.deleteTb.Name = "deleteTb";
             this.deleteTb.Size = new System.Drawing.Size(77, 22);
             this.deleteTb.TabIndex = 61;
@@ -1167,7 +1174,7 @@ namespace CW
             "  3. View existing data by user group",
             "  4. Edit existing data",
             "  5. Delete existing data"});
-            this.listBox1.Location = new System.Drawing.Point(21, 20);
+            this.listBox1.Location = new System.Drawing.Point(51, 75);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(237, 116);
             this.listBox1.TabIndex = 63;
@@ -1176,11 +1183,21 @@ namespace CW
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(232, 219);
+            this.label14.Location = new System.Drawing.Point(262, 274);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(64, 32);
             this.label14.TabIndex = 64;
             this.label14.Text = "PersonId \r\n/ Name :";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button5.Location = new System.Drawing.Point(376, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(708, 37);
+            this.button5.TabIndex = 65;
+            this.button5.Text = "DESKTOP INFORMATION SYSTEM";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -1188,6 +1205,7 @@ namespace CW
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1781, 877);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label13);
@@ -1345,5 +1363,6 @@ namespace CW
         private System.Windows.Forms.TextBox deleteTb;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button5;
     }
 }
