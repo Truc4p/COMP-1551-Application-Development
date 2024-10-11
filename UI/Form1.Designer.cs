@@ -698,7 +698,6 @@ namespace CW
             this.tabPage8.Size = new System.Drawing.Size(508, 256);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Student";
-            this.tabPage8.Click += new System.EventHandler(this.tabPage8_Click);
             // 
             // label12
             // 
@@ -888,7 +887,6 @@ namespace CW
             this.adminLb.Size = new System.Drawing.Size(45, 16);
             this.adminLb.TabIndex = 53;
             this.adminLb.Text = "Admin";
-            this.adminLb.Click += new System.EventHandler(this.adminLb_Click);
             // 
             // worhoutb
             // 
@@ -968,7 +966,6 @@ namespace CW
             this.tabPage6.Size = new System.Drawing.Size(508, 256);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Teacher";
-            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
             // 
             // edit
             // 
@@ -978,7 +975,6 @@ namespace CW
             this.edit.Size = new System.Drawing.Size(67, 16);
             this.edit.TabIndex = 49;
             this.edit.Text = "PersonId :";
-            this.edit.Click += new System.EventHandler(this.label40_Click);
             // 
             // editIDtb
             // 
@@ -986,7 +982,6 @@ namespace CW
             this.editIDtb.Name = "editIDtb";
             this.editIDtb.Size = new System.Drawing.Size(116, 22);
             this.editIDtb.TabIndex = 48;
-            this.editIDtb.TextChanged += new System.EventHandler(this.editIDtb_TextChanged);
             // 
             // teacherLb
             // 
@@ -1173,12 +1168,12 @@ namespace CW
             "  2. View all existing data",
             "  3. View existing data by user group",
             "  4. Edit existing data",
-            "  5. Delete existing data"});
-            this.listBox1.Location = new System.Drawing.Point(51, 75);
+            "  5. Delete existing data",
+            "  6. Search data"});
+            this.listBox1.Location = new System.Drawing.Point(51, 59);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(237, 116);
+            this.listBox1.Size = new System.Drawing.Size(252, 132);
             this.listBox1.TabIndex = 63;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label14
             // 
