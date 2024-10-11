@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,7 +9,7 @@ namespace CW
     public class PersonDAL
     {
         // Connection string to connect to the SQL Server database
-        private readonly string ConString = "Data Source=ADMIN-PC\\SQLEXPRESS;Initial Catalog=EduCen;Persist Security Info=True;User ID=sa;Password=zxc;TrustServerCertificate=True";
+        private readonly string ConString = "Data Source=ADMIN-PC\\SQLEXPRESS;Initial Catalog=EduCen;Persist Security Info=True;User ID=ab;Password=abc;TrustServerCertificate=True"; // change userid, password and server name as per your configuration
 
         // SqlConnection object to manage the connection to the database
         private readonly SqlConnection con = new SqlConnection();
